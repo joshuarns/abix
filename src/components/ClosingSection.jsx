@@ -18,11 +18,11 @@ export default function ClosingSection() {
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
 
-          {/* Overlay */}
+          {/* Overlay — solo sobre la zona del texto (derecha) */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(10,30,40,0.55) 0%, rgba(10,30,40,0.7) 100%)',
+              background: 'linear-gradient(to left, rgba(10,30,40,0.92) 0%, rgba(10,30,40,0.75) 40%, rgba(10,30,40,0) 70%)',
             }}
           />
 
