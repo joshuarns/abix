@@ -1,0 +1,316 @@
+import { useState } from 'react'
+import { Check, Zap, Wifi, Shield, Phone } from 'lucide-react'
+
+const plans = [
+  {
+    name: 'FIBER 60+',
+    price: 499,
+    speed: 60,
+    featured: false,
+    ideal: 'Ideal para 1–2 usuarios',
+    perks: ['Navegación fluida', 'Streaming HD', 'Home office básico'],
+  },
+  {
+    name: 'FIBER 100+',
+    price: 549,
+    speed: 100,
+    featured: false,
+    ideal: 'Ideal para familias pequeñas',
+    perks: ['Streaming 4K', 'Videollamadas estables', 'Varios dispositivos'],
+  },
+  {
+    name: 'FIBER 150+',
+    price: 599,
+    speed: 150,
+    featured: false,
+    ideal: 'Ideal para familias activas',
+    perks: ['Gaming online', 'Smart home', 'Downloads rápidos'],
+  },
+  {
+    name: 'FIBER 300+',
+    price: 649,
+    speed: 300,
+    featured: true,
+    ideal: 'El favorito de las familias',
+    perks: ['Máximo rendimiento', 'Gaming sin lag', 'Toda la familia conectada'],
+  },
+  {
+    name: 'FIBER 500+',
+    price: 999,
+    speed: 500,
+    featured: false,
+    ideal: 'Para hogares exigentes',
+    perks: ['Home office avanzado', 'Múltiples streams 4K', 'Backups en la nube'],
+  },
+  {
+    name: 'FIBER 1000+',
+    price: 1499,
+    speed: 1000,
+    featured: false,
+    ideal: 'Máxima potencia disponible',
+    perks: ['Velocidad ilimitada', 'Servidor en casa', 'Sin límites'],
+  },
+]
+
+const included = [
+  { icon: Wifi,    label: 'Fibra óptica 100% simétrica' },
+  { icon: Shield,  label: 'Sin contratos forzosos' },
+  { icon: Zap,     label: 'Instalación gratuita' },
+  { icon: Phone,   label: 'Soporte 24/7' },
+]
+
+export default function PlansSection() {
+  const [hovered, setHovered] = useState(null)
+
+  return (
+    <section className="w-full py-24 px-6" style={{ background: 'linear-gradient(180deg, #f0fdfd 0%, #f8fafc 100%)' }}>
+      <div className="mx-auto" style={{ maxWidth: '1340px' }}>
+
+        {/* Header */}
+        <div className="text-center mb-6">
+          <span
+            className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
+            style={{ backgroundColor: 'rgba(43,189,189,0.12)', color: '#146071' }}
+          >
+            Internet Residencial
+          </span>
+          <h2
+            className="font-extrabold text-gray-900"
+            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
+          >
+            ABIX Fiber, <span style={{ color: '#2bbdbd' }}>elige tu plan</span>
+          </h2>
+          <p className="text-gray-500 mt-3 mb-8" style={{ fontSize: '1.05rem' }}>
+            Todos los planes con velocidad simétrica · Sin contratos forzosos
+          </p>
+        </div>
+
+        {/* Included perks strip */}
+        <div
+          className="flex flex-wrap justify-center gap-6 mb-14 py-4 px-8 rounded-2xl"
+          style={{ backgroundColor: 'rgba(20,96,113,0.06)' }}
+        >
+          {included.map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-2">
+              <Icon className="w-4 h-4 shrink-0" style={{ color: '#2bbdbd' }} />
+              <span className="text-sm font-semibold text-gray-600">{label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Plans grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
+          {plans.map((plan, i) => {
+            const isHovered = hovered === i
+            const isActive = plan.featured || isHovered
+
+            return (
+              <div
+                key={plan.name}
+                className="relative flex flex-col rounded-2xl cursor-pointer"
+                style={{
+                  background: plan.featured
+                    ? 'linear-gradient(155deg, #1a7a8f 0%, #0d4a58 100%)'
+                    : isHovered
+                    ? 'linear-gradient(155deg, #2bbdbd 0%, #1a9a9a 100%)'
+                    : '#ffffff',
+                  border: plan.featured
+                    ? '2px solid rgba(255,255,255,0.15)'
+                    : isHovered
+                    ? '2px solid #2bbdbd'
+                    : '2px solid #e2e8f0',
+                  boxShadow: plan.featured
+                    ? '0 24px 64px rgba(20,96,113,0.4)'
+                    : isHovered
+                    ? '0 16px 40px rgba(43,189,189,0.3)'
+                    : '0 2px 12px rgba(0,0,0,0.05)',
+                  transform: plan.featured
+                    ? 'scale(1.02)'
+                    : isHovered
+                    ? 'translateY(-6px)'
+                    : 'none',
+                  transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+                  zIndex: plan.featured ? 2 : isHovered ? 1 : 0,
+                  padding: '1.5rem 1.25rem',
+                }}
+                onMouseEnter={() => !plan.featured && setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                {/* Badge */}
+                {plan.featured && (
+                  <div
+                    className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full text-white font-bold whitespace-nowrap"
+                    style={{ backgroundColor: '#e02020', fontSize: '0.7rem', letterSpacing: '0.03em' }}
+                  >
+                    ❤ el más amado
+                  </div>
+                )}
+
+                {/* Plan name */}
+                <p
+                  className="font-extrabold tracking-wide mb-3 text-center"
+                  style={{
+                    fontFamily: "'Montserrat Alternates', sans-serif",
+                    fontSize: '0.72rem',
+                    letterSpacing: '0.08em',
+                    color: plan.featured || isHovered ? 'rgba(255,255,255,0.7)' : '#94a3b8',
+                  }}
+                >
+                  {plan.name}
+                </p>
+
+                {/* Speed — el dato más importante */}
+                <div className="text-center mb-1">
+                  <span
+                    className="font-extrabold leading-none"
+                    style={{
+                      fontFamily: "'Montserrat Alternates', sans-serif",
+                      fontSize: 'clamp(2rem, 3vw, 2.5rem)',
+                      color: plan.featured || isHovered ? '#ffffff' : '#146071',
+                    }}
+                  >
+                    {plan.speed >= 1000 ? '1,000' : plan.speed}
+                  </span>
+                  <span
+                    className="font-bold ml-1"
+                    style={{
+                      fontSize: '0.8rem',
+                      color: plan.featured || isHovered ? 'rgba(255,255,255,0.65)' : '#64748b',
+                    }}
+                  >
+                    Mbps
+                  </span>
+                </div>
+                <p
+                  className="text-center mb-4"
+                  style={{
+                    fontSize: '0.72rem',
+                    color: plan.featured || isHovered ? 'rgba(255,255,255,0.55)' : '#94a3b8',
+                  }}
+                >
+                  simétrico
+                </p>
+
+                {/* Divider */}
+                <div
+                  className="mb-4"
+                  style={{
+                    height: '1px',
+                    backgroundColor: plan.featured || isHovered ? 'rgba(255,255,255,0.12)' : '#f1f5f9',
+                  }}
+                />
+
+                {/* Price */}
+                <div className="text-center mb-1">
+                  <span
+                    style={{
+                      fontSize: '0.72rem',
+                      color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8',
+                    }}
+                  >
+                    Desde
+                  </span>
+                  <div className="flex items-baseline justify-center gap-0.5">
+                    <span
+                      className="font-extrabold"
+                      style={{
+                        fontFamily: "'Montserrat Alternates', sans-serif",
+                        fontSize: 'clamp(1.4rem, 2.2vw, 1.75rem)',
+                        color: plan.featured || isHovered ? '#ffffff' : '#1e293b',
+                      }}
+                    >
+                      ${plan.price.toLocaleString('en-US')}
+                    </span>
+                    <span style={{ fontSize: '0.75rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8' }}>
+                      /mes
+                    </span>
+                  </div>
+                </div>
+
+                {/* Ideal for */}
+                <p
+                  className="text-center mb-4"
+                  style={{
+                    fontSize: '0.7rem',
+                    color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {plan.ideal}
+                </p>
+
+                {/* Perks — comentado temporalmente
+                <ul className="flex flex-col gap-2 mb-5 flex-1">
+                  {plan.perks.map((perk) => (
+                    <li key={perk} className="flex items-start gap-2">
+                      <Check
+                        className="w-3.5 h-3.5 mt-0.5 shrink-0"
+                        style={{ color: plan.featured || isHovered ? 'rgba(255,255,255,0.8)' : '#2bbdbd' }}
+                      />
+                      <span
+                        style={{
+                          fontSize: '0.72rem',
+                          color: plan.featured || isHovered ? 'rgba(255,255,255,0.75)' : '#64748b',
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {perk}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                */}
+
+                {/* CTA */}
+                <a
+                  href="#contratar"
+                  className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all"
+                  style={{
+                    backgroundColor: plan.featured
+                      ? '#e02020'
+                      : isHovered
+                      ? 'rgba(255,255,255,0.2)'
+                      : '#f1f5f9',
+                    color: plan.featured || isHovered ? '#ffffff' : '#146071',
+                    border: isHovered && !plan.featured ? '1px solid rgba(255,255,255,0.3)' : 'none',
+                    boxShadow: plan.featured ? '0 4px 16px rgba(224,32,32,0.45)' : 'none',
+                  }}
+                >
+                  Lo quiero
+                </a>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="flex flex-col items-center gap-3 mt-14">
+          <p className="text-gray-400 text-sm">¿No sabes cuál elegir? Revisa la cobertura en tu zona.</p>
+          <a
+            href="#cobertura"
+            className="font-bold transition-all hover:shadow-lg"
+            style={{
+              border: '2px solid #146071',
+              color: '#146071',
+              borderRadius: '9999px',
+              padding: '0.75rem 2.5rem',
+              fontSize: '1rem',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#146071'
+              e.currentTarget.style.color = '#fff'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent'
+              e.currentTarget.style.color = '#146071'
+            }}
+          >
+            Revisar cobertura
+          </a>
+        </div>
+
+      </div>
+    </section>
+  )
+}
