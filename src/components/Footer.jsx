@@ -1,4 +1,4 @@
-import logoAbix from '@/assets/logo-abix.png'
+import logoAbix from '@/assets/abix-logo-white.png'
 import { MapPin, Phone, Mail } from 'lucide-react'
 
 const links = {
@@ -79,7 +79,7 @@ export default function Footer() {
 
         {/* Brand column — 2 cols */}
         <div className="col-span-2 md:col-span-3 lg:col-span-2 flex flex-col gap-6">
-          <img src={logoAbix} alt="ABIX" style={{ height: '44px', width: 'auto', filter: 'brightness(0) invert(1)' }} />
+          <img src={logoAbix} alt="ABIX" style={{ maxWidth: '180px', width: '100%', height: 'auto' }} />
 
           <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, maxWidth: '280px' }}>
             Internet de fibra óptica 100% propio. Conectando hogares y empresas del Caribe Mexicano desde Cancún hasta Tulum.

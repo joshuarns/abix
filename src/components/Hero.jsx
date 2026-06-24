@@ -40,7 +40,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', backgroundColor: '#061a20' }}>
+    <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh', backgroundColor: '#2bbdbd' }}>
 
       <style>{`
         @keyframes float-slow { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-22px) } }
@@ -60,7 +60,7 @@ export default function Hero() {
         .hero-ring    { animation: pulse-ring 2.5s ease-out infinite }
         .hero-ring-2  { animation: pulse-ring 2.5s ease-out infinite 1.2s }
         .shimmer-text {
-          background: linear-gradient(90deg, #ffffff 0%, #2bbdbd 40%, #ffffff 60%, #2bbdbd 100%);
+          background: linear-gradient(90deg, #ffffff 0%, #061a20 40%, #ffffff 60%, #061a20 100%);
           background-size: 200% auto;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -75,12 +75,12 @@ export default function Hero() {
 
       {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute rounded-full" style={{ width:'680px', height:'680px', top:'-180px', left:'-120px', background:'radial-gradient(circle, rgba(43,189,189,0.18) 0%, transparent 70%)' }} />
-        <div className="absolute rounded-full" style={{ width:'500px', height:'500px', bottom:'-100px', right:'-80px', background:'radial-gradient(circle, rgba(20,96,113,0.3) 0%, transparent 70%)' }} />
-        <div className="absolute rounded-full" style={{ width:'300px', height:'300px', top:'40%', left:'35%', background:'radial-gradient(circle, rgba(43,189,189,0.08) 0%, transparent 70%)' }} />
+        <div className="absolute rounded-full" style={{ width:'680px', height:'680px', top:'-180px', left:'-120px', background:'radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%)' }} />
+        <div className="absolute rounded-full" style={{ width:'500px', height:'500px', bottom:'-100px', right:'-80px', background:'radial-gradient(circle, rgba(6,26,32,0.25) 0%, transparent 70%)' }} />
+        <div className="absolute rounded-full" style={{ width:'300px', height:'300px', top:'40%', left:'35%', background:'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)' }} />
 
         {/* Grid lines decorativas */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" style={{ stroke:'#2bbdbd' }}>
+        <svg className="absolute inset-0 w-full h-full opacity-5" style={{ stroke:'#061a20' }}>
           {[...Array(12)].map((_,i) => (
             <line key={`v${i}`} x1={`${i*9}%`} y1="0" x2={`${i*9}%`} y2="100%" strokeWidth="0.5"/>
           ))}
@@ -121,21 +121,36 @@ export default function Hero() {
           </div>
 
           {/* Subtitle — oculto en mobile para ahorrar espacio */}
-          <p className="hero-fade-3 text-gray-400 leading-relaxed hidden sm:block" style={{ fontSize:'clamp(0.9rem, 1.4vw, 1.1rem)', maxWidth:'440px' }}>
+          <p className="hero-fade-3 leading-relaxed hidden sm:block" style={{ fontSize:'clamp(0.9rem, 1.4vw, 1.1rem)', maxWidth:'440px', color:'rgba(6,26,32,0.75)' }}>
             Internet de fibra óptica 100% propio. Para que trabajes, juegues y compartas
-            <strong className="text-gray-200"> sin pensar en la conexión.</strong>
+            <strong style={{ color:'#061a20' }}> sin pensar en la conexión.</strong>
           </p>
 
           {/* Price */}
           <div className="hero-fade-3 flex items-baseline gap-2">
-            <span className="text-gray-500 text-sm font-medium">Desde</span>
+            <span className="text-sm font-medium" style={{ color:'rgba(6,26,32,0.65)' }}>Desde</span>
             <span
               className="font-extrabold"
-              style={{ fontFamily:"'Montserrat Alternates', sans-serif", fontSize:'clamp(1.75rem, 5vw, 3rem)', color:'#2bbdbd' }}
+              style={{ fontFamily:"'Montserrat Alternates', sans-serif", fontSize:'clamp(1.75rem, 5vw, 3rem)', color:'#061a20' }}
             >
               $499
             </span>
-            <span className="text-gray-500 text-sm">/mes</span>
+            <span className="text-sm" style={{ color:'rgba(6,26,32,0.65)' }}>/mes</span>
+          </div>
+
+          {/* Stats */}
+          <div className="hero-fade-3 grid grid-cols-3 gap-2 md:flex md:gap-6">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col">
+                <span
+                  className="font-extrabold leading-none"
+                  style={{ fontFamily:"'Montserrat Alternates', sans-serif", fontSize:'clamp(1.1rem, 3.5vw, 1.6rem)', color:'#fff' }}
+                >
+                  {s.value}<span style={{ color:'#061a20', fontSize:'0.75rem' }}>{s.unit}</span>
+                </span>
+                <span className="mt-0.5" style={{ fontSize:'0.65rem', color:'rgba(6,26,32,0.65)' }}>{s.label}</span>
+              </div>
+            ))}
           </div>
 
           {/* CTAs — full width en mobile */}
@@ -143,7 +158,7 @@ export default function Hero() {
             <a
               href="#contratar"
               className="font-bold text-white inline-flex items-center justify-center gap-2 py-3.5 rounded-2xl transition-all hover:scale-105"
-              style={{ backgroundColor:'#2bbdbd', fontSize:'1rem', padding:'0.875rem 1.75rem', transition:'all 0.3s' }}
+              style={{ backgroundColor:'#061a20', fontSize:'1rem', padding:'0.875rem 1.75rem', transition:'all 0.3s' }}
               onMouseEnter={e => e.currentTarget.style.boxShadow='0 8px 30px rgba(43,189,189,0.5)'}
               onMouseLeave={e => e.currentTarget.style.boxShadow='none'}
             >
@@ -161,21 +176,6 @@ export default function Hero() {
               <WhatsAppIcon />
               Escríbenos
             </a>
-          </div>
-
-          {/* Stats — 3 en fila siempre */}
-          <div className="hero-fade-5 grid grid-cols-3 gap-2 pt-1 md:flex md:gap-6">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-col">
-                <span
-                  className="font-extrabold leading-none"
-                  style={{ fontFamily:"'Montserrat Alternates', sans-serif", fontSize:'clamp(1.1rem, 3.5vw, 1.6rem)', color:'#fff' }}
-                >
-                  {s.value}<span style={{ color:'#2bbdbd', fontSize:'0.75rem' }}>{s.unit}</span>
-                </span>
-                <span className="text-gray-500 mt-0.5" style={{ fontSize:'0.65rem' }}>{s.label}</span>
-              </div>
-            ))}
           </div>
 
         </div>
@@ -197,23 +197,6 @@ export default function Hero() {
             className="hero-person relative z-10 object-contain object-bottom w-full"
             style={{ maxHeight:'42vh', maxWidth:'340px' }}
           />
-
-          {/* Floating card — velocidad (solo md+) */}
-          <div
-            className="hero-card-1 absolute z-20 hidden md:flex flex-col gap-1 px-4 py-3 rounded-2xl"
-            style={{ top:'18%', right:'2%', backgroundColor:'rgba(255,255,255,0.06)', backdropFilter:'blur(16px)', border:'1px solid rgba(255,255,255,0.12)', minWidth:'150px', boxShadow:'0 8px 32px rgba(0,0,0,0.3)' }}
-          >
-            <span className="text-gray-400 text-xs font-medium">Velocidad activa</span>
-            <div className="flex items-baseline gap-1">
-              <span className="font-extrabold text-white" style={{ fontFamily:"'Montserrat Alternates', sans-serif", fontSize:'1.6rem' }}>300</span>
-              <span className="text-[#2bbdbd] text-sm font-bold">Mbps ↑↓</span>
-            </div>
-            <div className="flex gap-1 mt-1">
-              {[...Array(5)].map((_,i) => (
-                <div key={i} className="rounded-full flex-1" style={{ height:'4px', backgroundColor: i < 4 ? '#2bbdbd' : 'rgba(255,255,255,0.15)' }} />
-              ))}
-            </div>
-          </div>
 
           {/* Floating card — usuarios (solo md+) */}
           <div

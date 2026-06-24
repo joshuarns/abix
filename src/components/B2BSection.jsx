@@ -1,6 +1,6 @@
-import empresasImg from '@/assets/img/portrait-barista-girl-asian-female-cafe-worker-shows-okay-ok-sign-approval-recommend-smth-happ.jpg'
-import negociosImg from '@/assets/img/business-75.jpg'
-import hotelesImg from '@/assets/img/BUSINESS-DESKTOP.png'
+import empresasImg from '@/assets/img/empresas.png'
+import negociosImg from '@/assets/img/portrait-barista-girl-asian-female-cafe-worker-shows-okay-ok-sign-approval-recommend-smth-happ.jpg'
+import hotelesImg from '@/assets/img/hoteles.png'
 
 const segments = [
   {
