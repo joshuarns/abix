@@ -138,21 +138,6 @@ export default function Hero() {
             <span className="text-sm" style={{ color:'rgba(6,26,32,0.65)' }}>/mes</span>
           </div>
 
-          {/* Stats */}
-          <div className="hero-fade-3 grid grid-cols-3 gap-2 md:flex md:gap-6">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-col">
-                <span
-                  className="font-extrabold leading-none"
-                  style={{ fontFamily:"'Montserrat Alternates', sans-serif", fontSize:'clamp(1.1rem, 3.5vw, 1.6rem)', color:'#fff' }}
-                >
-                  {s.value}<span style={{ color:'#061a20', fontSize:'0.75rem' }}>{s.unit}</span>
-                </span>
-                <span className="mt-0.5" style={{ fontSize:'0.65rem', color:'rgba(6,26,32,0.65)' }}>{s.label}</span>
-              </div>
-            ))}
-          </div>
-
           {/* CTAs — full width en mobile */}
           <div className="hero-fade-4 flex flex-col sm:flex-row gap-3">
             <a

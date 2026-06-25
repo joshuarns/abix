@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react'
 import imgEstable from '@/assets/img/SENAL-ESTABLE-DESKTOP.png'
 import imgSimetrica from '@/assets/img/SENAL-SIMERICA-DESKTOP.png'
 import imgLocal from '@/assets/img/SOMOS-DE-AQUI-DESKTOP.png'
@@ -24,9 +25,24 @@ const cards = [
 ]
 
 export default function FiberSection() {
+  const [current, setCurrent] = useState(0)
+  const startX = useRef(null)
+
+  const prev = () => setCurrent((c) => (c - 1 + cards.length) % cards.length)
+  const next = () => setCurrent((c) => (c + 1) % cards.length)
+
+  const onTouchStart = (e) => { startX.current = e.touches[0].clientX }
+  const onTouchEnd = (e) => {
+    if (startX.current === null) return
+    const diff = startX.current - e.changedTouches[0].clientX
+    if (diff > 40) next()
+    else if (diff < -40) prev()
+    startX.current = null
+  }
+
   return (
-    <section className="w-full py-16 px-6 bg-white">
-      <div className="mx-auto" style={{ maxWidth: '1340px' }}>
+    <section className="w-full py-16 bg-white overflow-hidden">
+      <div className="mx-auto px-6" style={{ maxWidth: '1340px' }}>
 
         {/* Header */}
         <div className="text-center mb-10">
@@ -41,39 +57,48 @@ export default function FiberSection() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-2xl overflow-hidden shadow-md flex flex-col"
-            >
-              {/* Photo */}
-              <div className="w-full overflow-hidden" style={{ height: '260px' }}>
-                <img
-                  src={card.img}
-                  alt={card.alt}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-
-              {/* Text block */}
-              <div className="flex flex-col gap-2 p-6" style={{ backgroundColor: '#146071' }}>
-                <h3
-                  className="text-white font-bold"
-                  style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.5rem)', fontFamily: "'Montserrat Alternates', sans-serif" }}
-                >
-                  {card.title}
-                </h3>
-                <p className="text-white" style={{ fontSize: 'clamp(0.85rem, 1.1vw, 1rem)', whiteSpace: 'pre-line', lineHeight: 1.6 }}>
-                  {card.desc}
-                </p>
-              </div>
-            </div>
-          ))}
+        {/* Desktop: grid — Mobile: carrusel */}
+        <div
+          className="hidden md:grid md:grid-cols-3 gap-6"
+        >
+          {cards.map((card) => <Card key={card.title} card={card} />)}
         </div>
 
-        {/* CTA Button */}
+        {/* Mobile carousel */}
+        <div
+          className="md:hidden relative"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(calc(-${current} * (100% + 16px)))`, gap: '16px' }}
+          >
+            {cards.map((card) => (
+              <div key={card.title} className="shrink-0 w-full">
+                <Card card={card} />
+              </div>
+            ))}
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-5">
+            {cards.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className="rounded-full transition-all"
+                style={{
+                  width: i === current ? '20px' : '8px',
+                  height: '8px',
+                  backgroundColor: i === current ? '#2bbdbd' : '#cbd5e1',
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
         <div className="flex justify-center mt-10">
           <a
             href="#por-que-abix"
@@ -92,5 +117,26 @@ export default function FiberSection() {
 
       </div>
     </section>
+  )
+}
+
+function Card({ card }) {
+  return (
+    <div className="rounded-2xl overflow-hidden shadow-md flex flex-col">
+      <div className="w-full overflow-hidden" style={{ height: '260px' }}>
+        <img src={card.img} alt={card.alt} className="w-full h-full object-cover object-top" />
+      </div>
+      <div className="flex flex-col gap-2 p-6" style={{ backgroundColor: '#146071' }}>
+        <h3
+          className="text-white font-bold"
+          style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.5rem)', fontFamily: "'Montserrat Alternates', sans-serif" }}
+        >
+          {card.title}
+        </h3>
+        <p className="text-white" style={{ fontSize: 'clamp(0.85rem, 1.1vw, 1rem)', whiteSpace: 'pre-line', lineHeight: 1.6 }}>
+          {card.desc}
+        </p>
+      </div>
+    </div>
   )
 }
