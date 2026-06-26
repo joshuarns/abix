@@ -232,12 +232,6 @@ function PlanCard({ plan, i, isHovered, setHovered }) {
           style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '0.75rem', letterSpacing: '0.1em' }}>
           {plan.name}
         </p>
-        {plan.featured && (
-          <div className="flex items-center justify-center gap-1.5 mt-1">
-            <span style={{ fontSize: '0.7rem', color: '#e02020' }}>♥</span>
-            <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>el más amado</span>
-          </div>
-        )}
       </div>
 
       {/* PRECIO — protagonista */}
