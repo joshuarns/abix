@@ -61,16 +61,6 @@ export default function Hero() {
           style={{ flex: '0 0 auto', width: '100%', maxWidth: '540px' }}
         >
 
-          {/* Eyebrow tag */}
-          <div className="h-fade-1">
-            <span
-              className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full"
-              style={{ backgroundColor: 'rgba(6,26,32,0.15)', color: '#061a20' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full inline-block shrink-0" style={{ backgroundColor: '#061a20' }} />
-              Internet Fibra Óptica · Caribe Mexicano
-            </span>
-          </div>
 
           {/* Headline */}
           <div className="h-fade-2">
@@ -118,7 +108,7 @@ export default function Hero() {
           <div className="h-fade-3" style={{ width: '48px', height: '3px', backgroundColor: 'rgba(6,26,32,0.25)', borderRadius: '9999px' }} />
 
           {/* Hero image — mobile only, between subtitle and price */}
-          <div className="md:hidden h-fade-4 flex items-end justify-center" style={{ height: '52vw', maxHeight: '320px' }}>
+          <div className="md:hidden h-fade-4 flex items-end justify-center" style={{ height: '80vw', maxHeight: '420px' }}>
             <img
               src={heroPerson}
               alt="Persona con ABIX"

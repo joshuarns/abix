@@ -52,14 +52,14 @@ function ProductCard({ p }) {
       </div>
       <div className="flex flex-col gap-3 px-6 py-5 flex-1" style={{ backgroundColor: p.accent }}>
         <p className="text-white text-sm leading-relaxed" style={{ opacity: 0.9 }}>{p.desc}</p>
-        <div className="flex items-end justify-between">
+        <div className="flex flex-col gap-3">
           <div>
             <span className="text-white text-xs" style={{ opacity: 0.75 }}>Desde</span>
             <p className="text-white font-extrabold leading-tight" style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.6rem' }}>
               {p.price}<span className="text-sm font-semibold">/mes</span>
             </p>
           </div>
-          <a href="#" className="font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105 whitespace-nowrap"
+          <a href="#" className="w-full text-center font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105"
             style={{ backgroundColor: '#4caf50', color: '#fff', boxShadow: '0 3px 10px rgba(76,175,80,0.4)' }}>
             {p.cta}
           </a>

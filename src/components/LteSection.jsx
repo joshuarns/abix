@@ -61,7 +61,7 @@ function LteCard({ p }) {
         </div>
       </div>
 
-      <div className="flex items-end justify-between gap-4 px-7 py-6">
+      <div className="flex flex-col gap-4 px-7 py-6">
         <div className="flex flex-col gap-1">
           <h3 className="font-extrabold text-gray-900" style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.35rem' }}>
             {p.title}
@@ -75,8 +75,8 @@ function LteCard({ p }) {
             <span className="text-gray-400 text-sm">/mes</span>
           </div>
         </div>
-        <a href="#" className="shrink-0 font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105"
-          style={{ backgroundColor: '#4caf50', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(76,175,80,0.35)', whiteSpace: 'nowrap' }}>
+        <a href="#" className="w-full text-center font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105"
+          style={{ backgroundColor: '#4caf50', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(76,175,80,0.35)' }}>
           {p.cta}
         </a>
       </div>
