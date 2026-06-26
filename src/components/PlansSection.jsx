@@ -76,7 +76,7 @@ export default function PlansSection() {
   }
 
   return (
-    <section className="w-full py-24 px-6" style={{ background: 'linear-gradient(180deg, #f0fdfd 0%, #f8fafc 100%)' }}>
+    <section className="w-full py-24 px-6 overflow-hidden" style={{ background: 'linear-gradient(180deg, #f0fdfd 0%, #f8fafc 100%)' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
 
         {/* Header */}
@@ -113,18 +113,18 @@ export default function PlansSection() {
 
         {/* Plans — Mobile carousel */}
         <div
-          className="md:hidden relative overflow-hidden"
+          className="md:hidden relative -mx-6 px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(calc(-${current} * (100% + 16px)))`, gap: '16px' }}
+            style={{ transform: `translateX(calc(-${current} * (85% + 16px)))`, gap: '16px' }}
           >
             {plans.map((plan, i) => {
               const isHovered = false
               return (
-                <div key={plan.name} className="shrink-0 w-full pt-6">
+                <div key={plan.name} className="shrink-0 w-[85%] pt-6">
                   <PlanCard plan={plan} i={i} isHovered={isHovered} setHovered={setHovered} />
                 </div>
               )

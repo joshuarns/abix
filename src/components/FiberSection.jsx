@@ -66,16 +66,16 @@ export default function FiberSection() {
 
         {/* Mobile carousel */}
         <div
-          className="md:hidden relative"
+          className="md:hidden relative -mx-6 px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(calc(-${current} * (100% + 16px)))`, gap: '16px' }}
+            style={{ transform: `translateX(calc(-${current} * (85% + 16px)))`, gap: '16px' }}
           >
             {cards.map((card) => (
-              <div key={card.title} className="shrink-0 w-full">
+              <div key={card.title} className="shrink-0 w-[85%]">
                 <Card card={card} />
               </div>
             ))}

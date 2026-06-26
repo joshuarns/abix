@@ -98,13 +98,13 @@ export default function B2BSection() {
         </div>
 
         {/* Mobile carousel */}
-        <div className="md:hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+        <div className="md:hidden -mx-6 px-6" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(calc(-${current} * (100% + 16px)))`, gap: '16px' }}
+            style={{ transform: `translateX(calc(-${current} * (85% + 16px)))`, gap: '16px' }}
           >
             {segments.map((s) => (
-              <div key={s.tag} className="shrink-0 w-full">
+              <div key={s.tag} className="shrink-0 w-[85%]">
                 <B2BCard s={s} />
               </div>
             ))}

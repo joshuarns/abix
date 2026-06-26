@@ -117,6 +117,16 @@ export default function Hero() {
           {/* Divider */}
           <div className="h-fade-3" style={{ width: '48px', height: '3px', backgroundColor: 'rgba(6,26,32,0.25)', borderRadius: '9999px' }} />
 
+          {/* Hero image — mobile only, between subtitle and price */}
+          <div className="md:hidden h-fade-4 flex items-end justify-center" style={{ height: '52vw', maxHeight: '320px' }}>
+            <img
+              src={heroPerson}
+              alt="Persona con ABIX"
+              className="h-person object-contain object-bottom"
+              style={{ height: '100%', width: 'auto' }}
+            />
+          </div>
+
           {/* Price */}
           <div className="h-fade-4 flex items-baseline gap-2">
             <span style={{ fontSize: '0.95rem', color: 'rgba(6,26,32,0.65)', fontWeight: 600 }}>Desde</span>
@@ -160,15 +170,15 @@ export default function Hero() {
               }}
             >
               <WhatsAppIcon />
-              WhatsApp
+              Escríbenos
             </a>
           </div>
 
         </div>
 
-        {/* ── RIGHT: Image ── */}
+        {/* ── RIGHT: Image (desktop only) ── */}
         <div
-          className="relative flex-1 flex items-end justify-center md:justify-end self-stretch"
+          className="relative flex-1 hidden md:flex items-end justify-center md:justify-end self-stretch"
           style={{ minHeight: '55vw', maxHeight: '100vh' }}
         >
           {/* Sombra/halo detrás de la persona */}

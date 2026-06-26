@@ -29,12 +29,12 @@ export default function ClosingSection() {
               Vive el internet<br />como debe ser
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
               {['Conecta.', 'Disfruta.', 'Comparte.', 'Vive.'].map((word) => (
                 <span
                   key={word}
-                  className="font-bold px-4 py-1.5 rounded-full"
-                  style={{ fontSize: '0.9rem', backgroundColor: 'rgba(43,189,189,0.15)', color: '#2bbdbd', border: '1px solid rgba(43,189,189,0.3)' }}
+                  className="font-bold"
+                  style={{ fontSize: '1rem', color: '#2bbdbd' }}
                 >
                   {word}
                 </span>
