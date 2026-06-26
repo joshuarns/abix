@@ -210,7 +210,7 @@ function PlanCard({ plan, i, isHovered, setHovered }) {
         transform: plan.featured ? 'scale(1.02)' : isHovered ? 'translateY(-6px)' : 'none',
         transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
         zIndex: plan.featured ? 2 : isHovered ? 1 : 0,
-        padding: '1.5rem 1.25rem',
+        padding: '1.25rem 1.25rem',
       }}
       onMouseEnter={() => setHovered && !plan.featured && setHovered(i)}
       onMouseLeave={() => setHovered && setHovered(null)}
@@ -223,29 +223,41 @@ function PlanCard({ plan, i, isHovered, setHovered }) {
           ❤ el más amado
         </div>
       )}
-      <p className="font-extrabold tracking-wide mb-3 text-center"
-        style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '0.72rem', letterSpacing: '0.08em', color: plan.featured || isHovered ? 'rgba(255,255,255,0.7)' : '#94a3b8' }}>
-        {plan.name}
-      </p>
-      <div className="text-center mb-1">
-        <span className="font-extrabold leading-none"
-          style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: plan.featured || isHovered ? '#ffffff' : '#146071' }}>
-          {plan.speed >= 1000 ? '1,000' : plan.speed}
-        </span>
-        <span className="font-bold ml-1" style={{ fontSize: '0.8rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.65)' : '#64748b' }}>Mbps</span>
+      {/* Plan name — banda superior */}
+      <div
+        className="-mx-5 -mt-5 mb-4 py-2.5 px-4 text-center rounded-t-2xl"
+        style={{ backgroundColor: plan.featured ? 'rgba(255,255,255,0.15)' : isHovered ? 'rgba(255,255,255,0.18)' : '#2bbdbd' }}
+      >
+        <p className="font-extrabold tracking-widest text-white text-center"
+          style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '0.75rem', letterSpacing: '0.1em' }}>
+          {plan.name}
+        </p>
+        {plan.featured && (
+          <div className="flex items-center justify-center gap-1.5 mt-1">
+            <span style={{ fontSize: '0.7rem', color: '#e02020' }}>♥</span>
+            <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>el más amado</span>
+          </div>
+        )}
       </div>
-      <p className="text-center mb-4" style={{ fontSize: '0.72rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.55)' : '#94a3b8' }}>simétrico</p>
-      <div className="mb-4" style={{ height: '1px', backgroundColor: plan.featured || isHovered ? 'rgba(255,255,255,0.12)' : '#f1f5f9' }} />
+
+      {/* PRECIO — protagonista */}
       <div className="text-center mb-1">
-        <span style={{ fontSize: '0.72rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8' }}>Desde</span>
-        <div className="flex items-baseline justify-center gap-0.5">
+        <div className="flex items-start justify-center gap-0.5 leading-none">
           <span className="font-extrabold"
-            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.75rem)', color: plan.featured || isHovered ? '#ffffff' : '#1e293b' }}>
+            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.6rem)', color: plan.featured || isHovered ? '#ffffff' : '#1e293b', lineHeight: 1 }}>
             ${plan.price.toLocaleString('en-US')}
           </span>
-          <span style={{ fontSize: '0.75rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8' }}>/mes</span>
         </div>
+        <span style={{ fontSize: '0.8rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.7)' : '#94a3b8', fontWeight: 600 }}>/mes</span>
       </div>
+
+      {/* Velocidad + simétrico en una línea */}
+      <p className="text-center mb-3 font-semibold"
+        style={{ fontSize: '0.82rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.8)' : '#475569' }}>
+        {plan.speed >= 1000 ? '1,000' : plan.speed} Mbps <span style={{ fontWeight: 400, opacity: 0.75 }}>simétrico</span>
+      </p>
+
+      {/* Ideal para */}
       <p className="text-center mb-4" style={{ fontSize: '0.7rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8', lineHeight: 1.4 }}>
         {plan.ideal}
       </p>
