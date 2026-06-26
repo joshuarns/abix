@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Check, Zap, Wifi, Shield, Phone } from 'lucide-react'
 
 const plans = [
@@ -61,6 +61,19 @@ const included = [
 
 export default function PlansSection() {
   const [hovered, setHovered] = useState(null)
+  const [current, setCurrent] = useState(0)
+  const startX = useRef(null)
+
+  const prev = () => setCurrent((c) => Math.max(c - 1, 0))
+  const next = () => setCurrent((c) => Math.min(c + 1, plans.length - 1))
+  const onTouchStart = (e) => { startX.current = e.touches[0].clientX }
+  const onTouchEnd = (e) => {
+    if (startX.current === null) return
+    const diff = startX.current - e.changedTouches[0].clientX
+    if (diff > 40) next()
+    else if (diff < -40) prev()
+    startX.current = null
+  }
 
   return (
     <section className="w-full py-24 px-6" style={{ background: 'linear-gradient(180deg, #f0fdfd 0%, #f8fafc 100%)' }}>
@@ -98,189 +111,48 @@ export default function PlansSection() {
           ))}
         </div>
 
-        {/* Plans grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
-          {plans.map((plan, i) => {
-            const isHovered = hovered === i
-            const isActive = plan.featured || isHovered
+        {/* Plans — Mobile carousel */}
+        <div
+          className="md:hidden relative overflow-hidden"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(calc(-${current} * (100% + 16px)))`, gap: '16px' }}
+          >
+            {plans.map((plan, i) => {
+              const isHovered = false
+              return (
+                <div key={plan.name} className="shrink-0 w-full pt-6">
+                  <PlanCard plan={plan} i={i} isHovered={isHovered} setHovered={setHovered} />
+                </div>
+              )
+            })}
+          </div>
 
-            return (
-              <div
-                key={plan.name}
-                className="relative flex flex-col rounded-2xl cursor-pointer"
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {plans.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className="rounded-full transition-all"
                 style={{
-                  background: plan.featured
-                    ? 'linear-gradient(155deg, #1a7a8f 0%, #0d4a58 100%)'
-                    : isHovered
-                    ? 'linear-gradient(155deg, #2bbdbd 0%, #1a9a9a 100%)'
-                    : '#ffffff',
-                  border: plan.featured
-                    ? '2px solid rgba(255,255,255,0.15)'
-                    : isHovered
-                    ? '2px solid #2bbdbd'
-                    : '2px solid #e2e8f0',
-                  boxShadow: plan.featured
-                    ? '0 24px 64px rgba(20,96,113,0.4)'
-                    : isHovered
-                    ? '0 16px 40px rgba(43,189,189,0.3)'
-                    : '0 2px 12px rgba(0,0,0,0.05)',
-                  transform: plan.featured
-                    ? 'scale(1.02)'
-                    : isHovered
-                    ? 'translateY(-6px)'
-                    : 'none',
-                  transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
-                  zIndex: plan.featured ? 2 : isHovered ? 1 : 0,
-                  padding: '1.5rem 1.25rem',
+                  width: i === current ? '20px' : '8px',
+                  height: '8px',
+                  backgroundColor: i === current ? '#2bbdbd' : '#cbd5e1',
                 }}
-                onMouseEnter={() => !plan.featured && setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {/* Badge */}
-                {plan.featured && (
-                  <div
-                    className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full text-white font-bold whitespace-nowrap"
-                    style={{ backgroundColor: '#e02020', fontSize: '0.7rem', letterSpacing: '0.03em' }}
-                  >
-                    ❤ el más amado
-                  </div>
-                )}
+              />
+            ))}
+          </div>
+        </div>
 
-                {/* Plan name */}
-                <p
-                  className="font-extrabold tracking-wide mb-3 text-center"
-                  style={{
-                    fontFamily: "'Montserrat Alternates', sans-serif",
-                    fontSize: '0.72rem',
-                    letterSpacing: '0.08em',
-                    color: plan.featured || isHovered ? 'rgba(255,255,255,0.7)' : '#94a3b8',
-                  }}
-                >
-                  {plan.name}
-                </p>
-
-                {/* Speed — el dato más importante */}
-                <div className="text-center mb-1">
-                  <span
-                    className="font-extrabold leading-none"
-                    style={{
-                      fontFamily: "'Montserrat Alternates', sans-serif",
-                      fontSize: 'clamp(2rem, 3vw, 2.5rem)',
-                      color: plan.featured || isHovered ? '#ffffff' : '#146071',
-                    }}
-                  >
-                    {plan.speed >= 1000 ? '1,000' : plan.speed}
-                  </span>
-                  <span
-                    className="font-bold ml-1"
-                    style={{
-                      fontSize: '0.8rem',
-                      color: plan.featured || isHovered ? 'rgba(255,255,255,0.65)' : '#64748b',
-                    }}
-                  >
-                    Mbps
-                  </span>
-                </div>
-                <p
-                  className="text-center mb-4"
-                  style={{
-                    fontSize: '0.72rem',
-                    color: plan.featured || isHovered ? 'rgba(255,255,255,0.55)' : '#94a3b8',
-                  }}
-                >
-                  simétrico
-                </p>
-
-                {/* Divider */}
-                <div
-                  className="mb-4"
-                  style={{
-                    height: '1px',
-                    backgroundColor: plan.featured || isHovered ? 'rgba(255,255,255,0.12)' : '#f1f5f9',
-                  }}
-                />
-
-                {/* Price */}
-                <div className="text-center mb-1">
-                  <span
-                    style={{
-                      fontSize: '0.72rem',
-                      color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8',
-                    }}
-                  >
-                    Desde
-                  </span>
-                  <div className="flex items-baseline justify-center gap-0.5">
-                    <span
-                      className="font-extrabold"
-                      style={{
-                        fontFamily: "'Montserrat Alternates', sans-serif",
-                        fontSize: 'clamp(1.4rem, 2.2vw, 1.75rem)',
-                        color: plan.featured || isHovered ? '#ffffff' : '#1e293b',
-                      }}
-                    >
-                      ${plan.price.toLocaleString('en-US')}
-                    </span>
-                    <span style={{ fontSize: '0.75rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8' }}>
-                      /mes
-                    </span>
-                  </div>
-                </div>
-
-                {/* Ideal for */}
-                <p
-                  className="text-center mb-4"
-                  style={{
-                    fontSize: '0.7rem',
-                    color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8',
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {plan.ideal}
-                </p>
-
-                {/* Perks — comentado temporalmente
-                <ul className="flex flex-col gap-2 mb-5 flex-1">
-                  {plan.perks.map((perk) => (
-                    <li key={perk} className="flex items-start gap-2">
-                      <Check
-                        className="w-3.5 h-3.5 mt-0.5 shrink-0"
-                        style={{ color: plan.featured || isHovered ? 'rgba(255,255,255,0.8)' : '#2bbdbd' }}
-                      />
-                      <span
-                        style={{
-                          fontSize: '0.72rem',
-                          color: plan.featured || isHovered ? 'rgba(255,255,255,0.75)' : '#64748b',
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        {perk}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                */}
-
-                {/* CTA */}
-                <a
-                  href="#contratar"
-                  className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all"
-                  style={{
-                    backgroundColor: plan.featured
-                      ? '#e02020'
-                      : isHovered
-                      ? 'rgba(255,255,255,0.2)'
-                      : '#f1f5f9',
-                    color: plan.featured || isHovered ? '#ffffff' : '#146071',
-                    border: isHovered && !plan.featured ? '1px solid rgba(255,255,255,0.3)' : 'none',
-                    boxShadow: plan.featured ? '0 4px 16px rgba(224,32,32,0.45)' : 'none',
-                  }}
-                >
-                  Lo quiero
-                </a>
-              </div>
-            )
-          })}
+        {/* Plans — Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch pt-6">
+          {plans.map((plan, i) => (
+            <PlanCard key={plan.name} plan={plan} i={i} isHovered={hovered === i} setHovered={setHovered} />
+          ))}
         </div>
 
         {/* Bottom CTA */}
@@ -312,5 +184,83 @@ export default function PlansSection() {
 
       </div>
     </section>
+  )
+}
+
+function PlanCard({ plan, i, isHovered, setHovered }) {
+  return (
+    <div
+      className="relative flex flex-col rounded-2xl cursor-pointer"
+      style={{
+        background: plan.featured
+          ? 'linear-gradient(155deg, #1a7a8f 0%, #0d4a58 100%)'
+          : isHovered
+          ? 'linear-gradient(155deg, #2bbdbd 0%, #1a9a9a 100%)'
+          : '#ffffff',
+        border: plan.featured
+          ? '2px solid rgba(255,255,255,0.15)'
+          : isHovered
+          ? '2px solid #2bbdbd'
+          : '2px solid #e2e8f0',
+        boxShadow: plan.featured
+          ? '0 24px 64px rgba(20,96,113,0.4)'
+          : isHovered
+          ? '0 16px 40px rgba(43,189,189,0.3)'
+          : '0 2px 12px rgba(0,0,0,0.05)',
+        transform: plan.featured ? 'scale(1.02)' : isHovered ? 'translateY(-6px)' : 'none',
+        transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+        zIndex: plan.featured ? 2 : isHovered ? 1 : 0,
+        padding: '1.5rem 1.25rem',
+      }}
+      onMouseEnter={() => setHovered && !plan.featured && setHovered(i)}
+      onMouseLeave={() => setHovered && setHovered(null)}
+    >
+      {plan.featured && (
+        <div
+          className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full text-white font-bold whitespace-nowrap"
+          style={{ backgroundColor: '#e02020', fontSize: '0.7rem', letterSpacing: '0.03em' }}
+        >
+          ❤ el más amado
+        </div>
+      )}
+      <p className="font-extrabold tracking-wide mb-3 text-center"
+        style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '0.72rem', letterSpacing: '0.08em', color: plan.featured || isHovered ? 'rgba(255,255,255,0.7)' : '#94a3b8' }}>
+        {plan.name}
+      </p>
+      <div className="text-center mb-1">
+        <span className="font-extrabold leading-none"
+          style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: plan.featured || isHovered ? '#ffffff' : '#146071' }}>
+          {plan.speed >= 1000 ? '1,000' : plan.speed}
+        </span>
+        <span className="font-bold ml-1" style={{ fontSize: '0.8rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.65)' : '#64748b' }}>Mbps</span>
+      </div>
+      <p className="text-center mb-4" style={{ fontSize: '0.72rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.55)' : '#94a3b8' }}>simétrico</p>
+      <div className="mb-4" style={{ height: '1px', backgroundColor: plan.featured || isHovered ? 'rgba(255,255,255,0.12)' : '#f1f5f9' }} />
+      <div className="text-center mb-1">
+        <span style={{ fontSize: '0.72rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8' }}>Desde</span>
+        <div className="flex items-baseline justify-center gap-0.5">
+          <span className="font-extrabold"
+            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.75rem)', color: plan.featured || isHovered ? '#ffffff' : '#1e293b' }}>
+            ${plan.price.toLocaleString('en-US')}
+          </span>
+          <span style={{ fontSize: '0.75rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8' }}>/mes</span>
+        </div>
+      </div>
+      <p className="text-center mb-4" style={{ fontSize: '0.7rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8', lineHeight: 1.4 }}>
+        {plan.ideal}
+      </p>
+      {/* Perks — comentado temporalmente
+      <ul>...</ul>
+      */}
+      <a href="#contratar" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
+        style={{
+          backgroundColor: plan.featured ? '#e02020' : isHovered ? 'rgba(255,255,255,0.2)' : '#f1f5f9',
+          color: plan.featured || isHovered ? '#ffffff' : '#146071',
+          border: isHovered && !plan.featured ? '1px solid rgba(255,255,255,0.3)' : 'none',
+          boxShadow: plan.featured ? '0 4px 16px rgba(224,32,32,0.45)' : 'none',
+        }}>
+        Lo quiero
+      </a>
+    </div>
   )
 }

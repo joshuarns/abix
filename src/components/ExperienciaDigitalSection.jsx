@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react'
 import tvImg from '@/assets/img/abix-tv desktop.png'
 import movilImg from '@/assets/img/abix-movil-desktop.png'
 import wifiImg from '@/assets/img/wifi-total-desktop.png'
@@ -32,9 +33,59 @@ const products = [
   },
 ]
 
-export default function ExperienciaDigitalSection() {
+function ProductCard({ p }) {
   return (
-    <section className="w-full py-20 px-6" style={{ backgroundColor: '#f8fafc' }}>
+    <div
+      className="flex flex-col rounded-2xl overflow-hidden group h-full"
+      style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.08)', background: '#fff', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(20,96,113,0.18)' }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)' }}
+    >
+      <div className="px-6 pt-6 pb-3">
+        <span className="inline-block font-extrabold tracking-wide" style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.1rem', color: '#0f172a' }}>
+          {p.tag}
+        </span>
+        <p className="text-gray-500 text-sm mt-0.5">{p.tagline}</p>
+      </div>
+      <div className="overflow-hidden">
+        <img src={p.img} alt={p.tag} className="w-full h-auto block transition-transform duration-500 group-hover:scale-105" />
+      </div>
+      <div className="flex flex-col gap-3 px-6 py-5 flex-1" style={{ backgroundColor: p.accent }}>
+        <p className="text-white text-sm leading-relaxed" style={{ opacity: 0.9 }}>{p.desc}</p>
+        <div className="flex items-end justify-between">
+          <div>
+            <span className="text-white text-xs" style={{ opacity: 0.75 }}>Desde</span>
+            <p className="text-white font-extrabold leading-tight" style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.6rem' }}>
+              {p.price}<span className="text-sm font-semibold">/mes</span>
+            </p>
+          </div>
+          <a href="#" className="font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105 whitespace-nowrap"
+            style={{ backgroundColor: '#4caf50', color: '#fff', boxShadow: '0 3px 10px rgba(76,175,80,0.4)' }}>
+            {p.cta}
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function ExperienciaDigitalSection() {
+  const [current, setCurrent] = useState(0)
+  const startX = useRef(null)
+
+  const prev = () => setCurrent((c) => Math.max(c - 1, 0))
+  const next = () => setCurrent((c) => Math.min(c + 1, products.length - 1))
+  const onTouchStart = (e) => { startX.current = e.touches[0].clientX }
+  const onTouchEnd = (e) => {
+    if (startX.current === null) return
+    const diff = startX.current - e.changedTouches[0].clientX
+    if (diff > 40) next()
+    else if (diff < -40) prev()
+    startX.current = null
+  }
+
+  return (
+    <section className="w-full py-20 px-6 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
 
         {/* Header */}
@@ -50,86 +101,39 @@ export default function ExperienciaDigitalSection() {
           </h2>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((p) => (
-            <div
-              key={p.tag}
-              className="flex flex-col rounded-2xl overflow-hidden group"
-              style={{
-                boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
-                background: '#fff',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-6px)'
-                e.currentTarget.style.boxShadow = '0 16px 40px rgba(20,96,113,0.18)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)'
-              }}
-            >
-              {/* Tag header */}
-              <div className="px-6 pt-6 pb-3">
-                <span
-                  className="inline-block font-extrabold tracking-wide"
-                  style={{
-                    fontFamily: "'Montserrat Alternates', sans-serif",
-                    fontSize: '1.1rem',
-                    color: '#0f172a',
-                  }}
-                >
-                  {p.tag}
-                </span>
-                <p className="text-gray-500 text-sm mt-0.5">{p.tagline}</p>
+        {/* Mobile carousel */}
+        <div className="md:hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(calc(-${current} * (100% + 16px)))`, gap: '16px' }}
+          >
+            {products.map((p) => (
+              <div key={p.tag} className="shrink-0 w-full">
+                <ProductCard p={p} />
               </div>
+            ))}
+          </div>
 
-              {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={p.img}
-                  alt={p.tag}
-                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {products.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className="rounded-full transition-all"
+                style={{
+                  width: i === current ? '20px' : '8px',
+                  height: '8px',
+                  backgroundColor: i === current ? '#2bbdbd' : '#cbd5e1',
+                }}
+              />
+            ))}
+          </div>
+        </div>
 
-              {/* Bottom content */}
-              <div
-                className="flex flex-col gap-3 px-6 py-5 flex-1"
-                style={{ backgroundColor: p.accent }}
-              >
-                <p className="text-white text-sm leading-relaxed" style={{ opacity: 0.9 }}>
-                  {p.desc}
-                </p>
-                <div className="flex items-end justify-between">
-                  <div>
-                    <span className="text-white text-xs" style={{ opacity: 0.75 }}>Desde</span>
-                    <p
-                      className="text-white font-extrabold leading-tight"
-                      style={{
-                        fontFamily: "'Montserrat Alternates', sans-serif",
-                        fontSize: '1.6rem',
-                      }}
-                    >
-                      {p.price}<span className="text-sm font-semibold">/mes</span>
-                    </p>
-                  </div>
-                  <a
-                    href="#"
-                    className="font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105 whitespace-nowrap"
-                    style={{
-                      backgroundColor: '#4caf50',
-                      color: '#fff',
-                      boxShadow: '0 3px 10px rgba(76,175,80,0.4)',
-                    }}
-                  >
-                    {p.cta}
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
+          {products.map((p) => <ProductCard key={p.tag} p={p} />)}
         </div>
 
       </div>
