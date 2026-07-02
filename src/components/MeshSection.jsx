@@ -121,16 +121,9 @@ export default function MeshSection() {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
 
-                {/* Overlay gradient — desktop only */}
-                <div
-                  className="absolute inset-0 hidden md:block"
-                  style={{
-                    background: 'linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.1) 100%)',
-                  }}
-                />
 
                 {/* Text */}
-                <div className="relative z-10 p-8 flex flex-col gap-3 md:bg-transparent" style={{ minHeight: '460px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 45%, transparent 100%)' }}>
+                <div className="relative z-10 p-8 flex flex-col gap-3" style={{ minHeight: '460px' }}>
                   <h3
                     className="font-bold leading-snug"
                     style={{

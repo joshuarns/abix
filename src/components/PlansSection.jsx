@@ -7,7 +7,7 @@ const plans = [
     price: 499,
     speed: 60,
     featured: false,
-    ideal: 'Ideal para 1–2 usuarios',
+    ideal: 'Empieza a disfrutar la mejor conexión',
     perks: ['Navegación fluida', 'Streaming HD', 'Home office básico'],
   },
   {
@@ -15,7 +15,7 @@ const plans = [
     price: 549,
     speed: 100,
     featured: false,
-    ideal: 'Ideal para familias pequeñas',
+    ideal: 'Trabaja y comparte sin interrupciones',
     perks: ['Streaming 4K', 'Videollamadas estables', 'Varios dispositivos'],
   },
   {
@@ -23,7 +23,7 @@ const plans = [
     price: 599,
     speed: 150,
     featured: false,
-    ideal: 'Ideal para familias activas',
+    ideal: 'Para familias conectadas.',
     perks: ['Gaming online', 'Smart home', 'Downloads rápidos'],
   },
   {
@@ -31,7 +31,7 @@ const plans = [
     price: 649,
     speed: 300,
     featured: true,
-    ideal: 'El favorito de las familias',
+    ideal: 'Vive y navega sin límites.',
     perks: ['Máximo rendimiento', 'Gaming sin lag', 'Toda la familia conectada'],
   },
   {
@@ -39,7 +39,7 @@ const plans = [
     price: 999,
     speed: 500,
     featured: false,
-    ideal: 'Para hogares exigentes',
+    ideal: 'Rendimiento y confiabilidad total',
     perks: ['Home office avanzado', 'Múltiples streams 4K', 'Backups en la nube'],
   },
   {
@@ -47,7 +47,7 @@ const plans = [
     price: 1499,
     speed: 1000,
     featured: false,
-    ideal: 'Máxima potencia disponible',
+    ideal: 'Lo mejor de la tecnología ABIX',
     perks: ['Velocidad ilimitada', 'Servidor en casa', 'Sin límites'],
   },
 ]
@@ -91,10 +91,10 @@ export default function PlansSection() {
             className="font-extrabold text-gray-900"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
           >
-            ABIX Fiber, <span style={{ color: '#2bbdbd' }}>elige tu plan</span>
+            ABIX Fiber, <span style={{ color: '#2bbdbd' }}>elige el plan ideal para tu hogar.</span>
           </h2>
           <p className="text-gray-500 mt-3 mb-8" style={{ fontSize: '1.05rem' }}>
-            Todos los planes con velocidad simétrica · Sin contratos forzosos
+            Descubre la diferencia de un internet pensado para disfrutarse.
           </p>
         </div>
 
@@ -252,7 +252,7 @@ function PlanCard({ plan, i, isHovered, setHovered }) {
       </p>
 
       {/* Ideal para */}
-      <p className="text-center mb-4" style={{ fontSize: '0.7rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8', lineHeight: 1.4 }}>
+      <p className="text-center mb-4 font-semibold" style={{ fontSize: '0.95rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.85)' : '#475569', lineHeight: 1.4 }}>
         {plan.ideal}
       </p>
       {/* Perks — comentado temporalmente

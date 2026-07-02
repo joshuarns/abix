@@ -55,7 +55,7 @@ function ProductCard({ p }) {
         <div className="flex flex-col gap-3">
           <div>
             <span className="text-white text-xs" style={{ opacity: 0.75 }}>Desde</span>
-            <p className="text-white font-extrabold leading-tight" style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.6rem' }}>
+            <p className="text-white font-extrabold leading-tight" style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '2rem' }}>
               {p.price}<span className="text-sm font-semibold">/mes</span>
             </p>
           </div>

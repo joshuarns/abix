@@ -1,22 +1,23 @@
 import { useState } from 'react'
 import { ChevronUp, ChevronDown } from 'lucide-react'
+import redPropiaVideo from '@/assets/video/red propia.mp4'
 
 const items = [
   {
     title: 'RED DE FIBRA PROPIA',
-    content: 'Más de 300 km de fibra. Solo nuestra, solo para ti. No revendemos red de otros. De Cancún a Tulum, cada metro de fibra es nuestro.',
+    content: 'Más de 300 km de fibra óptica construida y operada por ABIX. De Cancún a Tulum, cada metro de fibra es nuestro.',
   },
   {
     title: 'CONEXIÓN DIRECTA',
-    content: 'Tu conexión va directo al backbone de internet sin intermediarios. Menos saltos, menos latencia, más velocidad real.',
+    content: 'Nuestra red llega hasta tu casa para darte una conexión más estable, sin depender de caminos improvisados.',
   },
   {
     title: 'SIEMPRE VIGILANTES',
-    content: 'Monitoreo 24/7 de nuestra red. Detectamos y resolvemos problemas antes de que los notes. Tu internet siempre en óptimas condiciones.',
+    content: 'Monitoreamos la red para detectar fallas, atenderlas rápido y mantener tu servicio funcionando.',
   },
   {
     title: 'EXPERIENCIA PROBADA',
-    content: 'Años conectando hogares y empresas en el Caribe Mexicano. Sabemos lo que necesitas y cómo dártelo.',
+    content: 'Conectamos hogares, negocios y desarrollos en una de las zonas con mayor demanda digital de México.',
   },
 ]
 
@@ -38,10 +39,15 @@ export default function DiferenciadoresSection() {
         {/* Content */}
         <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-          {/* Video placeholder */}
-          <div
-            className="w-full lg:w-1/2 rounded-2xl shrink-0"
-            style={{ backgroundColor: '#000', aspectRatio: '16/9' }}
+          {/* Video */}
+          <video
+            className="w-full lg:w-1/2 rounded-2xl shrink-0 object-cover"
+            style={{ aspectRatio: '16/9' }}
+            src={redPropiaVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
           />
 
           {/* Accordion */}

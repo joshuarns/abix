@@ -3,10 +3,10 @@ import hogarImg from '@/assets/img/abix-hogar-desktop.png'
 import hogarMobileImg from '@/assets/img/abix-mesh-mobile.png'
 
 const features = [
-  { num: '01', label: 'Internet 100% fibra simétrico' },
-  { num: '02', label: 'WiFi en toda tu casa' },
-  { num: '03', label: 'Más de 100 canales de TV en HD' },
-  { num: '04', label: 'Llamadas ilimitadas a móvil y celular' },
+  { num: '01', label: 'Internet 100% fibra simétrico', color: '#f97316' },
+  { num: '02', label: 'WiFi en toda tu casa', color: '#7c3aed' },
+  { num: '03', label: 'Más de 100 canales de TV en HD', color: '#eab308' },
+  { num: '04', label: 'Llamadas ilimitadas a móvil y celular', color: '#ec4899' },
 ]
 
 export default function HogarPlusSection() {
@@ -16,7 +16,7 @@ export default function HogarPlusSection() {
       {/* Header */}
       <div className="text-center px-6 pt-16 pb-10">
         <div className="inline-flex items-center gap-3 mb-3">
-          <img src={nuevoImg} alt="Nuevo" style={{ height: '52px', width: 'auto' }} />
+          <img src={nuevoImg} alt="Nuevo" style={{ height: '72px', width: 'auto' }} />
           <h2
             className="font-extrabold leading-none"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', letterSpacing: '-0.02em' }}
@@ -46,7 +46,7 @@ export default function HogarPlusSection() {
               <li key={f.num} className="flex items-center gap-4">
                 <span
                   className="shrink-0 font-extrabold flex items-center justify-center rounded-full"
-                  style={{ fontFamily: "'Montserrat Alternates', sans-serif", width: '40px', height: '40px', backgroundColor: '#2bbdbd', color: '#fff', fontSize: '0.75rem' }}
+                  style={{ fontFamily: "'Montserrat Alternates', sans-serif", width: '40px', height: '40px', backgroundColor: f.color, color: '#fff', fontSize: '0.75rem' }}
                 >
                   {f.num}
                 </span>
@@ -97,7 +97,7 @@ export default function HogarPlusSection() {
               {features.map((f) => (
                 <li key={f.num} className="flex items-center gap-4">
                   <span className="shrink-0 font-extrabold flex items-center justify-center rounded-full"
-                    style={{ fontFamily: "'Montserrat Alternates', sans-serif", width: '44px', height: '44px', backgroundColor: '#2bbdbd', color: '#fff', fontSize: '0.8rem' }}>
+                    style={{ fontFamily: "'Montserrat Alternates', sans-serif", width: '44px', height: '44px', backgroundColor: f.color, color: '#fff', fontSize: '0.8rem' }}>
                     {f.num}
                   </span>
                   <span className="text-white font-semibold" style={{ fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)' }}>{f.label}</span>
