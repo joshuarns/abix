@@ -2,11 +2,14 @@ import { useState, useRef } from 'react'
 import empresasImg from '@/assets/img/empresas.png'
 import negociosImg from '@/assets/img/portrait-barista-girl-asian-female-cafe-worker-shows-okay-ok-sign-approval-recommend-smth-happ.jpg'
 import hotelesImg from '@/assets/img/hoteles.png'
+import iconoEmpresas from '@/assets/icono-empresas.svg'
+import iconoNegocios from '@/assets/icono-negocios.svg'
+import iconoHoteles from '@/assets/icono-hoteles.svg'
 
 const segments = [
   {
     img: empresasImg,
-    icon: '🏪',
+    icon: iconoEmpresas,
     tag: 'EMPRESAS Y GOBIERNO',
     desc: 'Soluciones de alta densidad para operaciones que no pueden detenerse.',
     cta: 'Ver Soluciones',
@@ -15,7 +18,7 @@ const segments = [
   },
   {
     img: negociosImg,
-    icon: '🏢',
+    icon: iconoNegocios,
     tag: 'NEGOCIOS Y COMERCIOS',
     desc: 'Tu negocio no puede parar. Nosotros tampoco.',
     cta: 'Ver Soluciones',
@@ -24,7 +27,7 @@ const segments = [
   },
   {
     img: hotelesImg,
-    icon: '🌴',
+    icon: iconoHoteles,
     tag: 'HOTELES Y HOSPITALIDAD',
     desc: 'Tus huéspedes esperan lo mejor. Tu red también.',
     cta: 'Ver Soluciones',
@@ -47,7 +50,7 @@ function B2BCard({ s }) {
       </div>
       <div className="flex flex-col gap-3 px-7 py-6 flex-1" style={{ backgroundColor: s.accent }}>
         <div className="flex items-start gap-3">
-          <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>{s.icon}</span>
+          <img src={s.icon} alt="" style={{ width: '36px', height: '36px', objectFit: 'contain', flexShrink: 0 }} />
           <h3 className="font-extrabold text-white leading-tight"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', letterSpacing: '0.01em' }}>
             {s.tag}
