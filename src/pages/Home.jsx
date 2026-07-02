@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import FiberSection from '@/components/FiberSection'
@@ -12,6 +15,46 @@ import B2BSection from '@/components/B2BSection'
 import ContactForm from '@/components/ContactForm'
 import ClosingSection from '@/components/ClosingSection'
 import Footer from '@/components/Footer'
+
+gsap.registerPlugin(ScrollTrigger)
+
+function usePageAnimations() {
+  useEffect(() => {
+    // Animate each section as it enters the viewport
+    const sections = document.querySelectorAll('section')
+    sections.forEach((section) => {
+      // Header elements: h2, h3, p direct children of section or its first div
+      const headings = section.querySelectorAll('h2, h3')
+      const cards = section.querySelectorAll(
+        '.rounded-2xl, .rounded-xl, [class*="Card"], li'
+      )
+
+      if (headings.length) {
+        gsap.fromTo(
+          headings,
+          { y: 40, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', stagger: 0.1,
+            scrollTrigger: { trigger: section, start: 'top 88%', once: true },
+          }
+        )
+      }
+
+      if (cards.length) {
+        gsap.fromTo(
+          cards,
+          { y: 50, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.65, ease: 'power3.out', stagger: 0.08,
+            scrollTrigger: { trigger: section, start: 'top 80%', once: true },
+          }
+        )
+      }
+    })
+
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+  }, [])
+}
 
 function WhatsAppFloat() {
   return (
@@ -32,6 +75,8 @@ function WhatsAppFloat() {
 }
 
 export default function Home() {
+  usePageAnimations()
+
   return (
     <>
       <Navbar />
