@@ -16,7 +16,7 @@ export default function HogarPlusSection() {
       {/* Header */}
       <div className="text-center px-6 pt-16 pb-10">
         <div className="inline-flex items-center gap-3 mb-3">
-          <img src={nuevoImg} alt="Nuevo" style={{ height: '72px', width: 'auto' }} />
+          <img src={nuevoImg} alt="Nuevo" style={{ height: '100px', width: 'auto' }} />
           <h2
             className="font-extrabold leading-none"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', letterSpacing: '-0.02em' }}
