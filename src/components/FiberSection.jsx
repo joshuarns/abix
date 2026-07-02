@@ -7,20 +7,20 @@ const cards = [
   {
     img: imgEstable,
     alt: 'Mujer en videollamada',
-    title: 'Señal estable',
-    desc: 'Trabaja, juega y comparte\nsin interrupciones.',
+    title: 'Recibes lo que contratas',
+    desc: 'Porque tu internet debe \ndarte confianza.',
   },
   {
     img: imgSimetrica,
     alt: 'Joven jugando en computadora',
-    title: 'Señal simétrica',
-    desc: 'Sube y descarga\ncon la misma rapidez.',
+    title: 'Fibra hasta tu hogar',
+    desc: 'Porque tu internet debe \ndarte tranquilidad.',
   },
   {
     img: imgLocal,
     alt: 'Hombre con smartphone',
     title: 'Somos de aquí',
-    desc: 'Estamos cerca de ti\ncuando nos necesitas.',
+    desc: 'Porque tu internet también debe sentirse cercano.',
   },
 ]
 
