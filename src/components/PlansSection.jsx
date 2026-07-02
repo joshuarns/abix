@@ -39,7 +39,7 @@ const plans = [
     price: 999,
     speed: 500,
     featured: false,
-    ideal: 'Rendimiento y confiabilidad total',
+    ideal: 'Rendimiento y confiabilidad',
     perks: ['Home office avanzado', 'Múltiples streams 4K', 'Backups en la nube'],
   },
   {
