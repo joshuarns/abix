@@ -191,7 +191,7 @@ export default function Hero() {
           />
 
           {/* Floating badge — familias */}
-          <div
+          {/* <div
             className="absolute z-20 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl"
             style={{
               bottom: '28%',
@@ -216,7 +216,7 @@ export default function Hero() {
               <p className="font-bold text-xs" style={{ color: '#061a20' }}>+6,000 familias</p>
               <p className="text-xs" style={{ color: '#146071' }}>ya tienen ABIX ❤</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
       </div>

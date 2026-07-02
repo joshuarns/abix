@@ -121,7 +121,7 @@ export default function MeshSection() {
                 onClick={() => { goTo(i); resetTimer() }}
               >
                 {/* Image — top 58% */}
-                <div className="relative overflow-hidden" style={{ height: isMobile ? '220px' : '280px' }}>
+                <div className="relative overflow-hidden" >
                   <img
                     src={s.img}
                     alt={s.titleBlack}
