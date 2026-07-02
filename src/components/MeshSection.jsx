@@ -57,14 +57,15 @@ export default function MeshSection() {
 
   const visibleSlides = isMobile ? 1 : isTablet ? 2 : 3
   const GAP = isMobile ? 16 : 30
+  const maxIndex = slides.length - visibleSlides
 
   const goTo = (index) => {
-    setCurrent((index + slides.length) % slides.length)
+    setCurrent(Math.max(0, Math.min(index, maxIndex)))
   }
 
   const resetTimer = () => {
     clearInterval(timerRef.current)
-    timerRef.current = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000)
+    timerRef.current = setInterval(() => setCurrent((c) => (c >= maxIndex ? 0 : c + 1)), 5000)
   }
 
   useEffect(() => {
@@ -92,7 +93,7 @@ export default function MeshSection() {
         </h2>
 
         {/* Carousel track wrapper */}
-        <div className={isMobile ? '-mx-6 px-6' : 'overflow-hidden rounded-2xl'} style={{ touchAction: 'pan-y' }}>
+        <div className={isMobile ? '-mx-6 px-6' : ''} style={{ touchAction: 'pan-y', overflow: 'hidden', padding: '16px 12px 24px' }}>
           <div
             style={{
               display: 'flex',
@@ -107,35 +108,47 @@ export default function MeshSection() {
             {slides.map((s, i) => (
               <div
                 key={i}
-                className="relative overflow-hidden rounded-2xl cursor-pointer shrink-0"
+                className="overflow-hidden rounded-2xl cursor-pointer shrink-0 flex flex-col"
                 style={{
                   width: isMobile ? '85%' : `calc((100% - ${GAP * (visibleSlides - 1)}px) / ${visibleSlides})`,
-                  minHeight: isMobile ? '340px' : '460px',
+                  boxShadow: current === i
+                    ? '0 20px 48px rgba(43,189,189,0.2)'
+                    : '0 4px 20px rgba(0,0,0,0.08)',
+                  transform: current === i && !isMobile ? 'translateY(-4px)' : 'none',
+                  transition: 'box-shadow 0.4s ease, transform 0.4s ease',
+                  border: current === i ? '2px solid rgba(43,189,189,0.4)' : '2px solid transparent',
                 }}
                 onClick={() => { goTo(i); resetTimer() }}
               >
-                {/* Background image */}
-                <img
-                  src={s.img}
-                  alt={s.titleBlack}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                {/* Image — top 58% */}
+                <div className="relative overflow-hidden" style={{ height: isMobile ? '220px' : '280px' }}>
+                  <img
+                    src={s.img}
+                    alt={s.titleBlack}
+                    className="w-full h-full object-cover transition-transform duration-700"
+                    style={{ transform: current === i ? 'scale(1.04)' : 'scale(1)' }}
+                  />
+                </div>
 
-
-                {/* Text */}
-                <div className="relative z-10 p-8 flex flex-col gap-3" style={{ minHeight: '460px' }}>
+                {/* Text panel — bottom */}
+                <div
+                  className="flex flex-col gap-2 px-6 py-5 flex-1"
+                  style={{ backgroundColor: '#ffffff' }}
+                >
+                  {/* Acento teal */}
+                  <div style={{ width: '32px', height: '3px', backgroundColor: '#2bbdbd', borderRadius: '9999px' }} />
                   <h3
                     className="font-bold leading-snug"
                     style={{
                       fontFamily: "'Montserrat Alternates', sans-serif",
-                      fontSize: 'clamp(1.1rem, 1.8vw, 1.4rem)',
+                      fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                      color: '#0f172a',
                     }}
                   >
-                    <span className="text-gray-900">{s.titleBlack}</span>
-                    <br />
+                    {s.titleBlack}{' '}
                     <span style={{ color: '#2bbdbd' }}>{s.titleTeal}</span>
                   </h3>
-                  <p className="text-gray-700 leading-relaxed" style={{ fontSize: '0.9rem', maxWidth: '280px' }}>
+                  <p className="leading-relaxed" style={{ fontSize: '0.875rem', color: '#64748b' }}>
                     {s.desc}
                   </p>
                 </div>
@@ -146,7 +159,7 @@ export default function MeshSection() {
 
         {/* Dots */}
         <div className="flex justify-center gap-2 mt-6">
-          {slides.map((_, i) => (
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
               key={i}
               onClick={() => handleDotClick(i)}
