@@ -8,6 +8,7 @@ import PlansSection from '@/components/PlansSection'
 import DiferenciadoresSection from '@/components/DiferenciadoresSection'
 import MeshSection from '@/components/MeshSection'
 import HogarPlusSection from '@/components/HogarPlusSection'
+import FamiliaSection from '@/components/FamiliaSection'
 import ExperienciaDigitalSection from '@/components/ExperienciaDigitalSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import LteSection from '@/components/LteSection'
@@ -86,6 +87,7 @@ export default function Home() {
       <DiferenciadoresSection />
       <MeshSection />
       <HogarPlusSection />
+      <FamiliaSection />
       <ExperienciaDigitalSection />
       <TestimonialsSection />
       <LteSection />
