@@ -1,5 +1,6 @@
 import nuevoImg from '@/assets/img/NUEVO.png'
 import familiaImg from '@/assets/img/abix-familia.png'
+import familiaMobileImg from '@/assets/img/abix-familia-mobile.png'
 
 const perks = [
   { text: 'Internet 100% fibra simétrico', bold: false },
@@ -36,7 +37,7 @@ export default function FamiliaSection() {
       {/* ── MOBILE ── */}
       <div className="md:hidden" style={{ backgroundColor: '#061a20' }}>
         <div className="relative w-full">
-          <img src={familiaImg} alt="ABIX Familia Total" className="w-full h-auto block" />
+          <img src={familiaMobileImg} alt="ABIX Familia Total" className="w-full h-auto block" />
           <div className="absolute bottom-0 left-0 right-0" style={{ height: '45%', background: 'linear-gradient(to top, #061a20 0%, transparent 100%)' }} />
         </div>
 
