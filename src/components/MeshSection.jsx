@@ -127,14 +127,14 @@ export default function MeshSection() {
                     style={{ transform: current === i ? 'scale(1.04)' : 'scale(1)' }}
                   />
                   {/* Dark gradient top for text legibility */}
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(6,26,32,0.72) 0%, rgba(6,26,32,0.1) 55%, transparent 100%)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(6,26,32,0.52) 0%, rgba(6,26,32,0.05) 50%, transparent 100%)' }} />
                   {/* Title on image */}
                   <div className="absolute top-0 left-0 right-0 p-5">
                     <h3
                       className="font-extrabold leading-snug text-white"
                       style={{
                         fontFamily: "'Montserrat Alternates', sans-serif",
-                        fontSize: 'clamp(1.1rem, 1.6vw, 1.35rem)',
+                        fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)',
                       }}
                     >
                       {s.titleBlack}{' '}

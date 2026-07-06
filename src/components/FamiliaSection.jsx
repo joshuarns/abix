@@ -85,7 +85,7 @@ export default function FamiliaSection() {
       {/* ── DESKTOP ── */}
       <div className="hidden md:block relative w-full" style={{ minHeight: '580px' }}>
         <img src={familiaImg} alt="ABIX Familia Total" className="absolute inset-0 w-full h-full object-cover object-top" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.92) 0%, rgba(6,26,32,0.65) 50%, rgba(6,26,32,0.1) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.65) 0%, rgba(6,26,32,0.4) 50%, rgba(6,26,32,0.05) 100%)' }} />
 
         <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '580px' }}>
           <div style={{ maxWidth: '560px' }}>

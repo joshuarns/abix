@@ -90,7 +90,7 @@ export default function HogarPlusSection() {
       {/* ── DESKTOP ── */}
       <div className="hidden md:block relative w-full" style={{ minHeight: '560px' }}>
         <img src={hogarImg} alt="Casa conectada ABIX Hogar Plus" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,42,50,0.88) 0%, rgba(14,42,50,0.6) 55%, rgba(14,42,50,0.1) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,42,50,0.65) 0%, rgba(14,42,50,0.4) 55%, rgba(14,42,50,0.05) 100%)' }} />
         <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '560px' }}>
           <div style={{ maxWidth: '520px' }}>
             <ul className="flex flex-col gap-4 mb-10">
