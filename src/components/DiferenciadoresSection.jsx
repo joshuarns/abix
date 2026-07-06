@@ -9,7 +9,7 @@ const items = [
   },
   {
     title: 'CONEXIÓN DIRECTA',
-    content: 'Nuestra red llega hasta tu casa para darte una conexión más estable, sin depender de caminos improvisados.',
+    content: 'Nos conectamos directamente con los principales centros de internet en EEUU. Eso significa una conexión más rápida, estable y confiable.',
   },
   {
     title: 'SIEMPRE VIGILANTES',
