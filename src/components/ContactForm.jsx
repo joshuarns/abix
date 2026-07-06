@@ -30,7 +30,7 @@ export default function ContactForm() {
           className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
           style={{ backgroundColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.85)' }}
         >
-          Contratar ahora
+          Vuélvete ABIX-lover
         </span>
 
         <h2
@@ -41,7 +41,7 @@ export default function ContactForm() {
         </h2>
 
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem' }}>
-          Permítenos ayudarte, estamos a un clic de ti.
+          Estamos a un clic de ti.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

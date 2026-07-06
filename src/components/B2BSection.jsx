@@ -8,15 +8,6 @@ import iconoHoteles from '@/assets/icono-hoteles.svg'
 
 const segments = [
   {
-    img: empresasImg,
-    icon: iconoEmpresas,
-    tag: 'EMPRESAS Y GOBIERNO',
-    desc: 'Soluciones de alta densidad para operaciones que no pueden detenerse.',
-    cta: 'Ver Soluciones',
-    accent: '#146071',
-    href: '#empresas',
-  },
-  {
     img: negociosImg,
     icon: iconoNegocios,
     tag: 'NEGOCIOS Y COMERCIOS',
@@ -24,6 +15,15 @@ const segments = [
     cta: 'Ver Soluciones',
     accent: '#146071',
     href: '#negocios',
+  },
+  {
+    img: empresasImg,
+    icon: iconoEmpresas,
+    tag: 'EMPRESAS Y GOBIERNO',
+    desc: 'Soluciones de alta densidad para operaciones que no pueden detenerse.',
+    cta: 'Ver Soluciones',
+    accent: '#146071',
+    href: '#empresas',
   },
   {
     img: hotelesImg,
