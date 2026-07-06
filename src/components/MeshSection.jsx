@@ -111,43 +111,41 @@ export default function MeshSection() {
                 className="overflow-hidden rounded-2xl cursor-pointer shrink-0 flex flex-col"
                 style={{
                   width: isMobile ? '85%' : `calc((100% - ${GAP * (visibleSlides - 1)}px) / ${visibleSlides})`,
-                  boxShadow: current === i
-                    ? '0 20px 48px rgba(43,189,189,0.2)'
-                    : '0 4px 20px rgba(0,0,0,0.08)',
+                  boxShadow: current === i ? '0 20px 48px rgba(43,189,189,0.2)' : '0 4px 20px rgba(0,0,0,0.08)',
                   transform: current === i && !isMobile ? 'translateY(-4px)' : 'none',
                   transition: 'box-shadow 0.4s ease, transform 0.4s ease',
                   border: current === i ? '2px solid rgba(43,189,189,0.4)' : '2px solid transparent',
                 }}
                 onClick={() => { goTo(i); resetTimer() }}
               >
-                {/* Image — top 58% */}
-                <div className="relative overflow-hidden" >
+                {/* Image with title overlay */}
+                <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
                   <img
                     src={s.img}
                     alt={s.titleBlack}
-                    className="w-full h-full object-cover transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                     style={{ transform: current === i ? 'scale(1.04)' : 'scale(1)' }}
                   />
+                  {/* Dark gradient top for text legibility */}
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(6,26,32,0.72) 0%, rgba(6,26,32,0.1) 55%, transparent 100%)' }} />
+                  {/* Title on image */}
+                  <div className="absolute top-0 left-0 right-0 p-5">
+                    <h3
+                      className="font-extrabold leading-snug text-white"
+                      style={{
+                        fontFamily: "'Montserrat Alternates', sans-serif",
+                        fontSize: 'clamp(1.1rem, 1.6vw, 1.35rem)',
+                      }}
+                    >
+                      {s.titleBlack}{' '}
+                      <span style={{ color: '#2bbdbd' }}>{s.titleTeal}</span>
+                    </h3>
+                  </div>
                 </div>
 
-                {/* Text panel — bottom */}
-                <div
-                  className="flex flex-col gap-2 px-6 py-5 flex-1"
-                  style={{ backgroundColor: '#ffffff' }}
-                >
-                  {/* Acento teal */}
-                  <div style={{ width: '32px', height: '3px', backgroundColor: '#2bbdbd', borderRadius: '9999px' }} />
-                  <h3
-                    className="font-bold leading-snug"
-                    style={{
-                      fontFamily: "'Montserrat Alternates', sans-serif",
-                      fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                      color: '#0f172a',
-                    }}
-                  >
-                    {s.titleBlack}{' '}
-                    <span style={{ color: '#2bbdbd' }}>{s.titleTeal}</span>
-                  </h3>
+                {/* Description panel */}
+                <div className="flex flex-col gap-2 px-5 py-4 flex-1" style={{ backgroundColor: '#ffffff' }}>
+                  <div style={{ width: '28px', height: '3px', backgroundColor: '#2bbdbd', borderRadius: '9999px' }} />
                   <p className="leading-relaxed" style={{ fontSize: '0.875rem', color: '#64748b' }}>
                     {s.desc}
                   </p>

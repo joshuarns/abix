@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ChevronUp, ChevronDown } from 'lucide-react'
-import redPropiaVideo from '@/assets/video/red propia.mp4'
+import redPropiaVideo from '@/assets/video/video-abix-razones.mp4'
 
 const items = [
   {
