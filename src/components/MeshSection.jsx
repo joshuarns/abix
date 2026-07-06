@@ -137,8 +137,7 @@ export default function MeshSection() {
                         fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)',
                       }}
                     >
-                      {s.titleBlack}{' '}
-                      <span style={{ color: '#2bbdbd' }}>{s.titleTeal}</span>
+                      {s.titleBlack}{' '}{s.titleTeal}
                     </h3>
                   </div>
                 </div>
