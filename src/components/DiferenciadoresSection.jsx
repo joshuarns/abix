@@ -17,7 +17,7 @@ const items = [
   },
   {
     title: 'EXPERIENCIA PROBADA',
-    content: 'Conectamos hogares, negocios y desarrollos en una de las zonas con mayor demanda digital de México.',
+    content: 'Más de seis años construyendo la mejor red en Riviera Maya y más de 25 siendo pioneros del internet en México.',
   },
 ]
 
