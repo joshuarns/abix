@@ -67,7 +67,7 @@ export default function ContactForm() {
             className="text-white font-extrabold"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
           >
-            ¿Quieres dejar de sufrir <span style={{ color: '#2bbdbd' }}>tu internet</span>?
+            ¿Quieres empezar a disfrutar <span style={{ color: '#2bbdbd' }}>de internet</span>?
           </h2>
           <p className="mt-3" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem' }}>
             Déjanos tus datos y un asesor te contacta en minutos.
