@@ -1,47 +1,18 @@
-import { useState } from 'react'
-import { ChevronDown, Wifi, User, Phone, MapPin, Building2, Send } from 'lucide-react'
+const WaIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.215a.75.75 0 00.917.917l5.39-1.465A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.953-1.355l-.355-.212-3.683 1.001 1.001-3.683-.212-.355A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
+  </svg>
+)
 
-const services = [
-  'Internet ABIX Fiber',
-  'ABIX Hogar Plus',
-  'ABIX TV',
-  'ABIX Móvil',
-  'WiFi Total (Mesh)',
-  'ABIX LTE',
-  'ABIX To Go',
-]
-
-const cities = ['Cancún', 'Playa del Carmen', 'Tulum', 'Puerto Morelos', 'Bacalar', 'Chetumal']
-
-const colonias = {
-  'Cancún': ['Cancún Centro', 'Puerto Cancún', 'Zona Hotelera', 'El Cedral', 'Supermanzana 21', 'Las Américas', 'Región 94'],
-  'Playa del Carmen': ['Centro', 'Playacar', 'Colosio', 'Ejidal', 'La Guadalupana'],
-  'Tulum': ['Tulum Centro', 'Aldea Zamá', 'La Veleta', 'Región 15'],
-  'Puerto Morelos': ['Centro', 'Villas Morelos', 'Leona Vicario'],
-  'Bacalar': ['Centro', 'Los Lagos', 'Villa del Lago'],
-  'Chetumal': ['Centro', 'Las Palmas', 'David Gustavo'],
-}
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M2 7l10 7 10-7" />
+  </svg>
+)
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ service: '', name: '', phone: '', city: '', colonia: '' })
-  const [submitted, setSubmitted] = useState(false)
-
-  const set = (field) => (e) => {
-    const val = e.target.value
-    setForm((prev) => ({
-      ...prev,
-      [field]: val,
-      ...(field === 'city' ? { colonia: '' } : {}),
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
-
-  const isValid = form.service && form.name.trim() && form.phone.trim() && form.city && form.colonia
-
   return (
     <section
       className="w-full py-24 px-6 relative overflow-hidden"
@@ -53,213 +24,49 @@ export default function ContactForm() {
       <div className="absolute -bottom-32 -right-16 rounded-full opacity-10"
         style={{ width: '500px', height: '500px', backgroundColor: '#2bbdbd' }} />
 
-      <div className="relative mx-auto" style={{ maxWidth: '620px' }}>
+      <div className="relative mx-auto text-center" style={{ maxWidth: '620px' }}>
 
-        {/* Header */}
-        <div className="text-center mb-10">
-          <span
-            className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
-            style={{ backgroundColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.85)' }}
+        <span
+          className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+          style={{ backgroundColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.85)' }}
+        >
+          Contratar ahora
+        </span>
+
+        <h2
+          className="text-white font-extrabold mb-3"
+          style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
+        >
+          ¿Quieres empezar a disfrutar <span style={{ color: '#2bbdbd' }}>de internet</span>?
+        </h2>
+
+        <p className="mb-10" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem' }}>
+          Permítenos ayudarte, estamos a un clic de ti.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://wa.me/16012587695"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 font-bold py-4 px-8 rounded-2xl transition-all hover:opacity-90 hover:scale-105"
+            style={{ backgroundColor: '#25D366', color: '#fff', fontSize: '1rem', boxShadow: '0 8px 24px rgba(37,211,102,0.4)' }}
           >
-            Contratar ahora
-          </span>
-          <h2
-            className="text-white font-extrabold"
-            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
+            <WaIcon />
+            Escríbenos por WhatsApp
+          </a>
+
+          <a
+            href="/contacto"
+            className="flex items-center justify-center gap-3 font-bold py-4 px-8 rounded-2xl transition-all hover:opacity-90 hover:scale-105"
+            style={{ backgroundColor: 'rgba(255,255,255,0.12)', color: '#fff', fontSize: '1rem', border: '1px solid rgba(255,255,255,0.25)', boxShadow: '0 8px 24px rgba(0,0,0,0.15)' }}
           >
-            ¿Quieres empezar a disfrutar <span style={{ color: '#2bbdbd' }}>de internet</span>?
-          </h2>
-          <p className="mt-3" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem' }}>
-            Déjanos tus datos y un asesor te contacta en minutos.
-          </p>
+            <MailIcon />
+            Enviar un correo
+          </a>
         </div>
-
-        {/* Card */}
-        {!submitted ? (
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-3xl p-8 flex flex-col gap-5"
-            style={{
-              backgroundColor: 'rgba(255,255,255,0.07)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              boxShadow: '0 24px 64px rgba(0,0,0,0.25)',
-            }}
-          >
-
-            {/* Servicio */}
-            <Field icon={<Wifi className="w-4 h-4" />} label="¿Qué servicio te interesa?">
-              <SelectInput value={form.service} onChange={set('service')} placeholder="Selecciona un servicio">
-                {services.map((s) => <option key={s} value={s}>{s}</option>)}
-              </SelectInput>
-            </Field>
-
-            {/* Nombre */}
-            <Field icon={<User className="w-4 h-4" />} label="Tu nombre">
-              <TextInput
-                type="text"
-                placeholder="¿Cómo te llamas?"
-                value={form.name}
-                onChange={set('name')}
-              />
-            </Field>
-
-            {/* Teléfono */}
-            <Field icon={<Phone className="w-4 h-4" />} label="WhatsApp">
-              <TextInput
-                type="tel"
-                placeholder="Tu número de WhatsApp"
-                value={form.phone}
-                onChange={set('phone')}
-              />
-            </Field>
-
-            {/* Ciudad */}
-            <Field icon={<MapPin className="w-4 h-4" />} label="Ciudad">
-              <SelectInput value={form.city} onChange={set('city')} placeholder="¿En qué ciudad vives?">
-                {cities.map((c) => <option key={c} value={c}>{c}</option>)}
-              </SelectInput>
-            </Field>
-
-            {/* Colonia */}
-            <Field icon={<Building2 className="w-4 h-4" />} label="Colonia">
-              <SelectInput
-                value={form.colonia}
-                onChange={set('colonia')}
-                placeholder="¿De qué colonia eres?"
-                disabled={!form.city}
-              >
-                {(colonias[form.city] || []).map((c) => <option key={c} value={c}>{c}</option>)}
-              </SelectInput>
-            </Field>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={!isValid}
-              className="flex items-center justify-center gap-2 font-bold py-4 rounded-2xl transition-all mt-2"
-              style={{
-                backgroundColor: isValid ? '#4caf50' : 'rgba(255,255,255,0.15)',
-                color: isValid ? '#ffffff' : 'rgba(255,255,255,0.4)',
-                fontSize: '1.05rem',
-                boxShadow: isValid ? '0 8px 24px rgba(76,175,80,0.45)' : 'none',
-                transform: isValid ? 'none' : 'none',
-                cursor: isValid ? 'pointer' : 'not-allowed',
-                transition: 'all 0.25s ease',
-              }}
-              onMouseEnter={(e) => { if (isValid) e.currentTarget.style.transform = 'translateY(-2px)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'none' }}
-            >
-              <Send className="w-4 h-4" />
-              Quiero ABIX
-            </button>
-
-            <p className="text-center" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
-              Tu información es confidencial. No compartimos tus datos.
-            </p>
-
-          </form>
-        ) : (
-          /* Success state */
-          <div
-            className="rounded-3xl p-12 flex flex-col items-center gap-4 text-center"
-            style={{
-              backgroundColor: 'rgba(255,255,255,0.07)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.15)',
-            }}
-          >
-            <div
-              className="w-16 h-16 rounded-full flex items-center justify-center text-3xl"
-              style={{ backgroundColor: '#4caf50' }}
-            >
-              ✓
-            </div>
-            <h3 className="text-white font-extrabold" style={{ fontSize: '1.5rem', fontFamily: "'Montserrat Alternates', sans-serif" }}>
-              ¡Listo, {form.name.split(' ')[0]}!
-            </h3>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.6 }}>
-              Un asesor de ABIX te contactará vía WhatsApp en los próximos minutos.
-            </p>
-          </div>
-        )}
 
       </div>
     </section>
-  )
-}
-
-function Field({ icon, label, children }) {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <label className="flex items-center gap-2 text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.6)' }}>
-        <span style={{ color: '#2bbdbd' }}>{icon}</span>
-        {label}
-      </label>
-      {children}
-    </div>
-  )
-}
-
-function TextInput({ ...props }) {
-  return (
-    <input
-      {...props}
-      className="w-full rounded-xl px-4 py-3 font-medium outline-none transition-all"
-      style={{
-        backgroundColor: 'rgba(255,255,255,0.1)',
-        border: '1px solid rgba(255,255,255,0.15)',
-        color: '#ffffff',
-        fontSize: '0.95rem',
-      }}
-      onFocus={(e) => {
-        e.target.style.backgroundColor = 'rgba(255,255,255,0.15)'
-        e.target.style.borderColor = '#2bbdbd'
-        e.target.style.boxShadow = '0 0 0 3px rgba(43,189,189,0.2)'
-      }}
-      onBlur={(e) => {
-        e.target.style.backgroundColor = 'rgba(255,255,255,0.1)'
-        e.target.style.borderColor = 'rgba(255,255,255,0.15)'
-        e.target.style.boxShadow = 'none'
-      }}
-    />
-  )
-}
-
-function SelectInput({ children, placeholder, value, onChange, disabled }) {
-  return (
-    <div className="relative">
-      <select
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        className="w-full rounded-xl px-4 py-3 font-medium outline-none appearance-none transition-all"
-        style={{
-          backgroundColor: 'rgba(255,255,255,0.1)',
-          border: '1px solid rgba(255,255,255,0.15)',
-          color: value ? '#ffffff' : 'rgba(255,255,255,0.45)',
-          fontSize: '0.95rem',
-          cursor: disabled ? 'not-allowed' : 'pointer',
-          opacity: disabled ? 0.5 : 1,
-        }}
-        onFocus={(e) => {
-          e.target.style.backgroundColor = 'rgba(255,255,255,0.15)'
-          e.target.style.borderColor = '#2bbdbd'
-          e.target.style.boxShadow = '0 0 0 3px rgba(43,189,189,0.2)'
-        }}
-        onBlur={(e) => {
-          e.target.style.backgroundColor = 'rgba(255,255,255,0.1)'
-          e.target.style.borderColor = 'rgba(255,255,255,0.15)'
-          e.target.style.boxShadow = 'none'
-        }}
-      >
-        <option value="" disabled style={{ backgroundColor: '#146071' }}>{placeholder}</option>
-        {children}
-      </select>
-      <ChevronDown
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
-        style={{ color: '#2bbdbd' }}
-      />
-    </div>
   )
 }
