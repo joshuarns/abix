@@ -5,7 +5,7 @@ import redPropiaVideo from '@/assets/video/video-abix-razones.mp4'
 const items = [
   {
     title: 'RED DE FIBRA PROPIA',
-    content: 'Más de 300 km de fibra óptica construida y operada por ABIX. De Cancún a Tulum, cada metro de fibra es nuestro.',
+    content: 'Más de 300 km de fibra óptica construida y operada por ABIX. De Cancún a Tulum, cada metro de fibra es nuestro, es para ti.',
   },
   {
     title: 'CONEXIÓN DIRECTA',
