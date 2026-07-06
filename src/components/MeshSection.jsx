@@ -193,12 +193,12 @@ export default function MeshSection() {
             href="#mesh"
             className="mt-4 font-bold text-white px-8 py-3 rounded-xl transition-opacity hover:opacity-90"
             style={{
-              backgroundColor: '#4caf50',
+              backgroundColor: '#2bbdbd',
               fontSize: '1rem',
-              boxShadow: '0 4px 14px rgba(76,175,80,0.35)',
+              boxShadow: '0 4px 14px rgba(43,189,189,0.35)',
             }}
           >
-            Quiero WiFi en toda mi casa
+            ¡Lo quiero!
           </a>
         </div>
 

@@ -78,8 +78,8 @@ export default function HogarPlusSection() {
               </div>
               <a href="#hogar-plus"
                 className="font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 shrink-0"
-                style={{ backgroundColor: '#4caf50', fontSize: '0.95rem', boxShadow: '0 4px 20px rgba(76,175,80,0.45)' }}>
-                Lo quiero
+                style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 20px rgba(43,189,189,0.45)' }}>
+                ¡Lo quiero!
               </a>
             </div>
           </div>
@@ -122,8 +122,8 @@ export default function HogarPlusSection() {
                 </div>
                 <a href="#hogar-plus"
                   className="font-bold text-white px-8 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105 inline-block"
-                  style={{ backgroundColor: '#4caf50', fontSize: '1rem', boxShadow: '0 4px 20px rgba(76,175,80,0.45)' }}>
-                  Quiero Hogar Plus
+                  style={{ backgroundColor: '#2bbdbd', fontSize: '1rem', boxShadow: '0 4px 20px rgba(43,189,189,0.45)' }}>
+                  ¡Lo quiero!
                 </a>
               </div>
             </div>
