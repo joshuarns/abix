@@ -30,7 +30,7 @@ export default function ClosingSection() {
             </h2>
 
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
-              {['Conecta.', 'Disfruta.', 'Comparte.', 'Vive.'].map((word) => (
+              {['Conecta.', 'Disfruta.', 'Comparte.'].map((word) => (
                 <span
                   key={word}
                   className="font-bold"
@@ -41,9 +41,6 @@ export default function ClosingSection() {
               ))}
             </div>
 
-            <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
-              Y deja que tu conexión simplemente funcione.
-            </p>
           </div>
         </div>
 
@@ -73,15 +70,12 @@ export default function ClosingSection() {
                 Vive el internet<br />como debe ser
               </h2>
               <ul className="flex flex-col gap-1 mb-5">
-                {['Conecta.', 'Disfruta.', 'Comparte.', 'Vive.'].map((word) => (
+                {['Conecta.', 'Disfruta.', 'Comparte.'].map((word) => (
                   <li key={word} className="text-white font-bold" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', opacity: 0.9 }}>
                     {word}
                   </li>
                 ))}
               </ul>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-                Y deja que tu conexión simplemente funcione.
-              </p>
             </div>
           </div>
         </div>
