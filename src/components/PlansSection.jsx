@@ -15,7 +15,7 @@ const plans = [
     price: 549,
     speed: 100,
     featured: false,
-    ideal: 'Trabaja y comparte sin interrupciones',
+    ideal: 'Más espacio para todo lo que haces',
     perks: ['Streaming 4K', 'Videollamadas estables', 'Varios dispositivos'],
   },
   {
@@ -23,7 +23,7 @@ const plans = [
     price: 599,
     speed: 150,
     featured: false,
-    ideal: 'Para familias conectadas.',
+    ideal: 'Espacio de sobra para todo tu hogar',
     perks: ['Gaming online', 'Smart home', 'Downloads rápidos'],
   },
   {
@@ -31,7 +31,7 @@ const plans = [
     price: 649,
     speed: 300,
     featured: true,
-    ideal: 'Vive y navega sin límites.',
+    ideal: 'Vive y navega sin ningún límite',
     perks: ['Máximo rendimiento', 'Gaming sin lag', 'Toda la familia conectada'],
   },
   {
@@ -39,7 +39,7 @@ const plans = [
     price: 999,
     speed: 500,
     featured: false,
-    ideal: 'Rendimiento y confiabilidad',
+    ideal: 'Rendimiento y confiabilidad total',
     perks: ['Home office avanzado', 'Múltiples streams 4K', 'Backups en la nube'],
   },
   {
