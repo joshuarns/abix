@@ -53,7 +53,7 @@ export default function FiberSection() {
             ABIX <span style={{ color: '#2bbdbd' }}>Fiber</span>
           </h2>
           <p className="text-gray-600 mt-2" style={{ fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)' }}>
-            Internet residencia 100% Fibra Óptica
+            Internet residencial 100% Fibra Óptica
           </p>
         </div>
 
