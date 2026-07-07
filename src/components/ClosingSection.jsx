@@ -1,6 +1,7 @@
 import familyImg from '@/assets/img/vas-a-amar-a-abix-desktop.png'
 import familyMobileImg from '@/assets/img/vas-a-amar-tu-internet-mobile.png'
 import logoAbix from '@/assets/logo-abix.png'
+import vasAAmarImg from '@/assets/img/vas-a-amar-tu-internet-02.png'
 
 export default function ClosingSection() {
   return (
@@ -84,18 +85,7 @@ export default function ClosingSection() {
         <div className="flex flex-col items-center gap-5">
           <img src={logoAbix} alt="ABIX" style={{ height: '64px', width: 'auto' }} />
 
-          <p
-            className="font-extrabold flex items-center gap-2"
-            style={{
-              fontFamily: "'Montserrat Alternates', sans-serif",
-              fontSize: 'clamp(1.3rem, 2.5vw, 1.75rem)',
-              color: '#2bbdbd',
-            }}
-          >
-            Vas a amar
-            <HeartWifiIcon />
-            tu internet
-          </p>
+          <img src={vasAAmarImg} alt="Vas a amar tu internet" style={{ maxWidth: '360px', width: '100%', height: 'auto' }} />
 
           <a
             href="#contratar"

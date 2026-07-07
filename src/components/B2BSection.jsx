@@ -60,7 +60,7 @@ function B2BCard({ s }) {
       </div>
       <div className="px-7 py-5" style={{ backgroundColor: s.accent, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <a href={s.href} className="inline-block font-bold text-white text-sm px-6 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105"
-          style={{ backgroundColor: '#4caf50', boxShadow: '0 4px 14px rgba(76,175,80,0.4)' }}>
+          style={{ backgroundColor: '#2bbdbd', boxShadow: '0 4px 14px rgba(43,189,189,0.4)' }}>
           {s.cta}
         </a>
       </div>
