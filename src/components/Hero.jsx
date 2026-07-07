@@ -138,9 +138,9 @@ export default function Hero() {
             <a
               href="#contratar"
               className="font-bold text-white inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:scale-105 hover:shadow-xl"
-              style={{ backgroundColor: '#061a20', fontSize: '1rem', padding: '1rem 2rem' }}
+              style={{ backgroundColor: '#005665', fontSize: '1rem', padding: '1rem 2rem' }}
             >
-              Quiero contratar
+              Lo quiero
               <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
