@@ -60,8 +60,8 @@ function ProductCard({ p }) {
             </p>
           </div>
           <a href="#" className="w-full text-center font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105"
-            style={{ backgroundColor: '#4caf50', color: '#fff', boxShadow: '0 3px 10px rgba(76,175,80,0.4)' }}>
-            {p.cta}
+            style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 3px 10px rgba(43,189,189,0.4)' }}>
+            Lo quiero
           </a>
         </div>
       </div>

@@ -76,7 +76,7 @@ function LteCard({ p }) {
           </div>
         </div>
         <a href="#" className="w-full text-center font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105"
-          style={{ backgroundColor: '#4caf50', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(76,175,80,0.35)' }}>
+          style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
           {p.cta}
         </a>
       </div>
