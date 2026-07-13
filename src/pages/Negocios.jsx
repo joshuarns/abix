@@ -333,24 +333,27 @@ function MasVelocidad() {
   const slides = [
     {
       img: simetricoImg,
-      titleBlack: 'ABIX Fiber',
-      titleTeal: 'simétrico',
+      title: 'ABIX Fiber simétrico',
       desc: 'Misma velocidad para subir y para bajar. Ideal para videoconferencias, nube intensiva y operaciones que dependen de enviar tanta información como reciben.',
       cta: 'Cuéntanos qué necesitas',
     },
     {
       img: wifiNegocioImg,
-      titleBlack: 'WiFi en todo',
-      titleTeal: 'tu negocio',
+      title: 'WiFi en todo tu negocio',
       desc: 'Cada negocio es diferente. Un restaurante con terraza no se resuelve igual que una oficina. Diseñamos la cobertura WiFi que tu espacio necesita.',
       cta: 'Platiquemos',
     },
     {
       img: lineasMovilesImg,
-      titleBlack: 'Líneas',
-      titleTeal: 'móviles',
+      title: 'Líneas móviles',
       desc: 'Si tu equipo necesita líneas adicionales, encontramos el plan que se ajuste a tu operación.',
       cta: 'Platiquemos',
+    },
+    {
+      img: soloInternetImg,
+      title: 'Empresas y Hoteles',
+      desc: '¿Operas un hotel, una cadena o una empresa con más de 50 empleados? Tenemos soluciones dedicadas para ti.',
+      cta: 'Ver soluciones',
     },
   ]
 
@@ -407,32 +410,28 @@ function MasVelocidad() {
             {slides.map((s, i) => (
               <div
                 key={i}
-                className="overflow-hidden rounded-2xl cursor-pointer shrink-0 flex flex-col bg-white"
+                className="group overflow-hidden rounded-2xl cursor-pointer shrink-0 flex flex-col bg-white"
                 style={{
                   width: isMobile ? '85%' : `calc((100% - ${GAP * (visibleSlides - 1)}px) / ${visibleSlides})`,
                   boxShadow: current === i ? '0 20px 48px rgba(43,189,189,0.2)' : '0 4px 20px rgba(0,0,0,0.07)',
-                  transform: current === i && !isMobile ? 'translateY(-4px)' : 'none',
+                  transform: current === i && !isMobile ? 'translateY(-6px)' : 'none',
                   transition: 'box-shadow 0.4s ease, transform 0.4s ease',
                   border: current === i ? '2px solid rgba(43,189,189,0.4)' : '2px solid transparent',
                 }}
                 onClick={() => { setCurrent(Math.max(0, Math.min(i, maxIndex))); resetTimer() }}
               >
-                <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                  <img src={s.img} alt={s.titleBlack} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
-                    style={{ transform: current === i ? 'scale(1.04)' : 'scale(1)' }} />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(6,26,32,0.52) 0%, rgba(6,26,32,0.05) 50%, transparent 100%)' }} />
-                  <div className="absolute top-0 left-0 right-0 p-5">
-                    <h3 className="font-extrabold leading-snug text-white"
-                      style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)' }}>
-                      {s.titleBlack}{' '}<span style={{ color: '#a8eaea' }}>{s.titleTeal}</span>
-                    </h3>
-                  </div>
+                <div className="overflow-hidden">
+                  <img src={s.img} alt={s.title}
+                    className="w-full h-auto block transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <div className="flex flex-col gap-3 px-5 py-4 flex-1">
-                  <div style={{ width: '28px', height: '3px', backgroundColor: '#2bbdbd', borderRadius: '9999px' }} />
-                  <p className="leading-relaxed flex-1" style={{ fontSize: '0.875rem', color: '#64748b' }}>{s.desc}</p>
+                <div className="px-6 py-6 flex flex-col gap-3 flex-1">
+                  <h3 className="font-extrabold text-gray-900"
+                    style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.1rem' }}>
+                    {s.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{s.desc}</p>
                   <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
-                    className="inline-block font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 text-center"
+                    className="inline-block font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 text-center mt-2"
                     style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
                     {s.cta}
                   </a>
