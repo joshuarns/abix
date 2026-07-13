@@ -148,16 +148,16 @@ export default function Hero() {
 
             <a
               href="tel:9984270010"
-              className="font-bold inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:scale-105"
+              className="font-bold inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:scale-105 whitespace-nowrap"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.3)',
                 color: '#061a20',
                 border: '2px solid rgba(6,26,32,0.2)',
-                fontSize: '1rem',
-                padding: '1rem 2rem',
+                fontSize: '0.95rem',
+                padding: '1rem 1.5rem',
               }}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="#061a20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#061a20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" className="shrink-0">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12.13 19.79 19.79 0 0 1 1.41 3.5 2 2 0 0 1 3.39 1.31h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.21a16 16 0 0 0 6 6l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               o llámanos al 998 427 0010
