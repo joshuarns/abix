@@ -7,6 +7,7 @@ import ClientesSection from '@/components/ClientesSection'
 import heroImg from '@/assets/img/BUSINESS-DESKTOP.png'
 import personajeHeroImg from '@/assets/img/emprendedores-negocios.png'
 import soloInternetImg from '@/assets/img/boutique-negocios.jpg'
+import hotelesGrandesImg from '@/assets/img/hoteles-grandes.jpg'
 import clientesImg from '@/assets/img/restaurante-negocios.jpg'
 import equipoImg from '@/assets/img/imprenta-negocios.jpg'
 import wifiNegocioImg from '@/assets/img/cageteria-wifi-negocios.jpg'
@@ -350,7 +351,7 @@ function MasVelocidad() {
       cta: 'Platiquemos',
     },
     {
-      img: soloInternetImg,
+      img: hotelesGrandesImg,
       title: 'Empresas y Hoteles',
       desc: '¿Operas un hotel, una cadena o una empresa con más de 50 empleados? Tenemos soluciones dedicadas para ti.',
       cta: 'Ver soluciones',
