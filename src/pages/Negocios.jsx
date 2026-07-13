@@ -354,7 +354,7 @@ function MasVelocidad() {
       img: hotelesGrandesImg,
       title: 'Empresas y Hoteles',
       desc: '¿Operas un hotel, una cadena o una empresa con más de 50 empleados? Tenemos soluciones dedicadas para ti.',
-      cta: 'Ver soluciones',
+      special: true,
     },
   ]
 
@@ -425,17 +425,28 @@ function MasVelocidad() {
                   <img src={s.img} alt={s.title}
                     className="w-full h-auto block transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <div className="px-6 py-6 flex flex-col gap-3 flex-1">
-                  <h3 className="font-extrabold text-gray-900"
-                    style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.1rem' }}>
+                <div className="px-6 py-6 flex flex-col gap-3 flex-1"
+                  style={{ backgroundColor: s.special ? '#146071' : '#fff' }}>
+                  <h3 className="font-extrabold"
+                    style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.1rem', color: s.special ? '#fff' : '#111827' }}>
                     {s.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{s.desc}</p>
-                  <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
-                    className="inline-block font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 text-center mt-2"
-                    style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
-                    {s.cta}
-                  </a>
+                  <p className="text-sm leading-relaxed flex-1"
+                    style={{ color: s.special ? 'rgba(255,255,255,0.75)' : '#64748b' }}>{s.desc}</p>
+                  {s.special ? (
+                    <div className="flex flex-col gap-2 mt-2">
+                      <a href="/negocios#empresas" className="font-semibold text-sm underline underline-offset-2 transition-opacity hover:opacity-80"
+                        style={{ color: '#a8eaea' }}>Ir a Empresas y Gobierno</a>
+                      <a href="/negocios#hoteles" className="font-semibold text-sm underline underline-offset-2 transition-opacity hover:opacity-80"
+                        style={{ color: '#a8eaea' }}>Ir a Hoteles y hospitalidad</a>
+                    </div>
+                  ) : (
+                    <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+                      className="inline-block font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 text-center mt-2"
+                      style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
+                      {s.cta}
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
