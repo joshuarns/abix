@@ -4,7 +4,7 @@ import hogarMobileImg from '@/assets/img/abix-mesh-mobile.png'
 
 const features = [
   { num: '01', label: 'Internet 100% fibra simétrico', color: '#f97316' },
-  { num: '02', label: 'WiFi en toda tu casa', color: '#7c3aed' },
+  { num: '02', label: '1 módulo ABIX Mesh adicional', color: '#7c3aed' },
   { num: '03', label: 'Más de 100 canales de TV en HD', color: '#eab308' },
   { num: '04', label: 'Llamadas ilimitadas a móvil y celular', color: '#ec4899' },
 ]
@@ -73,8 +73,9 @@ export default function HogarPlusSection() {
                 <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', fontWeight: 600 }}>Todo desde</span>
                 <p className="text-white font-extrabold leading-none"
                   style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '2rem' }}>
-                  $799<span className="text-base font-semibold"> /mes*</span>
+                  $928<span className="text-base font-semibold"> /mes*</span>
                 </p>
+                <span style={{ fontSize: '0.9rem', color: '#2bbdbd', fontWeight: 700 }}>AHORRA $99 al mes</span>
               </div>
               <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
                 className="font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 shrink-0"
@@ -114,11 +115,12 @@ export default function HogarPlusSection() {
               </div>
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
-                  <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}>Todo desde</span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', fontWeight: 600 }}>Todo desde</span>
                   <p className="text-white font-extrabold leading-none"
                     style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3.5vw, 2.75rem)' }}>
-                    $799<span className="text-lg font-semibold"> /mes*</span>
+                    $928<span className="text-lg font-semibold"> /mes*</span>
                   </p>
+                  <span style={{ fontSize: '0.9rem', color: '#2bbdbd', fontWeight: 700 }}>AHORRA $99 al mes</span>
                 </div>
                 <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
                   className="font-bold text-white px-8 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105 inline-block"
