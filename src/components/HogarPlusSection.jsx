@@ -70,7 +70,7 @@ export default function HogarPlusSection() {
             </div>
             <div className="flex items-center justify-between gap-4">
               <div>
-                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)' }}>Todo desde</span>
+                <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', fontWeight: 600 }}>Todo desde</span>
                 <p className="text-white font-extrabold leading-none"
                   style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '2rem' }}>
                   $799<span className="text-base font-semibold"> /mes*</span>
