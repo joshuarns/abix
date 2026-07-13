@@ -7,6 +7,8 @@ import heroImg from '@/assets/img/BUSINESS-DESKTOP.png'
 import soloInternetImg from '@/assets/img/boutique-negocios.jpg'
 import clientesImg from '@/assets/img/restaurante-negocios.jpg'
 import equipoImg from '@/assets/img/imprenta-negocios.jpg'
+import wifiNegocioImg from '@/assets/img/cageteria-wifi-negocios.jpg'
+import lineasMovilesImg from '@/assets/img/ingenieros-celulares-negocios.jpg'
 import masNegocioImg from '@/assets/img/ABIX-MAS-NEGOCIO.jpg'
 import estrategicoImg from '@/assets/img/ABIX-ESTRATEGICO.jpg'
 import simetricoImg from '@/assets/img/SIMETRICO-NEGOCIOS.jpg'
@@ -333,13 +335,13 @@ function MasVelocidad() {
       cta: 'Cuéntanos qué necesitas',
     },
     {
-      img: clientesImg,
+      img: wifiNegocioImg,
       title: 'WiFi en todo tu negocio',
       desc: 'Cada negocio es diferente. Un restaurante con terraza no se resuelve igual que una oficina. Diseñamos la cobertura WiFi que tu espacio necesita.',
       cta: 'Platiquemos',
     },
     {
-      img: equipoImg,
+      img: lineasMovilesImg,
       title: 'Líneas móviles',
       desc: 'Si tu equipo necesita líneas adicionales, encontramos el plan que se ajuste a tu operación.',
       cta: 'Platiquemos',
