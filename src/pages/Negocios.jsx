@@ -255,60 +255,67 @@ function ConectaTuNegocio() {
 }
 
 // ─── Plan Bundle Section (shared pattern for Más Negocio + Estratégico) ────────
-function PlanBundle({ img, side = 'right', tag, tagline, features, price, speed, cta, note }) {
+function PlanBundle({ img, tag, tagline, features, price, speed, note }) {
   return (
-    <section className="w-full overflow-hidden">
+    <section className="w-full overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+
+      {/* Header centrado */}
+      <div className="text-center px-6 pt-16 pb-10">
+        <h2
+          className="font-extrabold leading-none mb-3"
+          style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', letterSpacing: '-0.02em' }}
+        >
+          {tag.split('·').map((part, i) => i === 0
+            ? <span key={i} className="text-gray-900">{part}</span>
+            : <span key={i} style={{ color: '#2bbdbd' }}>·{part}</span>
+          )}
+        </h2>
+        <p className="text-gray-500 font-medium" style={{ fontSize: '1.05rem' }}>
+          {tagline}
+        </p>
+      </div>
+
+      {/* Imagen con contenido superpuesto */}
       <div className="relative w-full" style={{ minHeight: '520px' }}>
         <img src={img} alt={tag} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0"
-          style={{ background: side === 'right'
-            ? 'linear-gradient(to right, rgba(6,26,32,0.0) 0%, rgba(6,26,32,0.88) 50%, rgba(6,26,32,0.96) 100%)'
-            : 'linear-gradient(to left, rgba(6,26,32,0.0) 0%, rgba(6,26,32,0.88) 50%, rgba(6,26,32,0.96) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.92) 0%, rgba(6,26,32,0.65) 50%, rgba(6,26,32,0.05) 100%)' }}
         />
         <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '520px' }}>
-          <div className={`flex ${side === 'right' ? 'justify-end' : 'justify-start'}`}>
-            <div style={{ maxWidth: '480px' }}>
-              <span className="inline-block font-extrabold tracking-widest text-xs px-4 py-1.5 rounded-full mb-4"
-                style={{ fontFamily: "'Montserrat Alternates', sans-serif", backgroundColor: 'rgba(43,189,189,0.2)', color: '#2bbdbd', border: '1px solid rgba(43,189,189,0.3)' }}>
-                {tag}
-              </span>
-              <p className="text-white font-bold italic mb-6" style={{ fontSize: 'clamp(1rem, 2vw, 1.3rem)', lineHeight: 1.5 }}>
-                "{tagline}"
-              </p>
-              <ul className="flex flex-col gap-3 mb-8">
-                {features.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
-                      style={{ backgroundColor: '#2bbdbd' }}>
-                      <svg viewBox="0 0 12 12" width="10" height="10" fill="none">
-                        <path d="M2 6l3 3 5-5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                    <span className="text-white text-sm" style={{ opacity: 0.9 }}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="rounded-2xl p-5 flex items-center justify-between gap-4 flex-wrap"
-                style={{ backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                <div>
-                  <p className="text-white text-xs mb-0.5" style={{ opacity: 0.6 }}>Plan con {speed} Megas</p>
-                  <p className="text-white font-extrabold leading-none"
-                    style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)' }}>
-                    ${price.toLocaleString('en-US')}<span className="text-base font-semibold">/mes</span>
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <a href="#contratar" className="font-bold text-white px-7 py-3 rounded-xl transition-all hover:opacity-90"
-                    style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.45)' }}>
-                    Lo quiero
-                  </a>
-                  <a href="#planes" className="text-center text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    Ver todos los planes →
-                  </a>
-                </div>
+          <div style={{ maxWidth: '500px' }}>
+            <ul className="flex flex-col gap-3 mb-8">
+              {features.map((f) => (
+                <li key={f} className="flex items-start gap-3">
+                  <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+                    style={{ backgroundColor: '#2bbdbd' }}>
+                    <svg viewBox="0 0 12 12" width="10" height="10" fill="none">
+                      <path d="M2 6l3 3 5-5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span className="text-white font-medium" style={{ fontSize: 'clamp(0.9rem, 1.2vw, 1rem)', opacity: 0.95 }}>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="rounded-2xl p-5 flex items-center justify-between gap-4 flex-wrap"
+              style={{ backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)' }}>
+              <div>
+                <p className="text-white text-xs mb-0.5" style={{ opacity: 0.6 }}>Plan con {speed} Megas</p>
+                <p className="text-white font-extrabold leading-none"
+                  style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)' }}>
+                  ${price.toLocaleString('en-US')}<span className="text-base font-semibold">/mes</span>
+                </p>
               </div>
-              {note && <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.4)' }}>{note}</p>}
+              <div className="flex flex-col gap-2">
+                <a href="#contratar" className="font-bold text-white px-7 py-3 rounded-xl transition-all hover:opacity-90"
+                  style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.45)' }}>
+                  ¡Lo quiero!
+                </a>
+                <a href="#planes" className="text-center text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                  Ver todos los planes →
+                </a>
+              </div>
             </div>
+            {note && <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.4)' }}>{note}</p>}
           </div>
         </div>
       </div>
@@ -593,7 +600,6 @@ export default function Negocios() {
       <PlanesNegocios />
       <PlanBundle
         img={masNegocioImg}
-        side="right"
         tag="PLAN ABIX · MÁS NEGOCIO"
         tagline="La mesa que se queda a ver el segundo tiempo es la mesa que pide otra ronda."
         features={[
@@ -608,7 +614,6 @@ export default function Negocios() {
       />
       <PlanBundle
         img={estrategicoImg}
-        side="left"
         tag="PLAN ABIX · ESTRATÉGICO"
         tagline="El internet de tu negocio, la línea de tu mostrador y el celular tuyo y de tu mano derecha. Todo con ABIX."
         features={[
