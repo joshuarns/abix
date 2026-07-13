@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import logoAbix from '@/assets/logo-abix.png'
 
 const navLinks = [
-  { label: 'Residencial', href: '#residencial' },
+  { label: 'Residencial', href: '/' },
   { label: 'Negocios', href: '/negocios' },
   { label: 'Hoteles', href: '#hoteles' },
   { label: 'Empresas', href: '#empresas' },

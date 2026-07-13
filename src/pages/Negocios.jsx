@@ -35,18 +35,21 @@ const useCases = [
     title: 'Solo necesito internet',
     desc: 'Fibra óptica para operar tu negocio. Rápida, estable y con línea telefónica incluida.',
     ideal: 'Ideal para tiendas, consultorios, despachos y oficinas.',
+    href: '#planes',
   },
   {
     img: clientesImg,
     title: 'Mi negocio recibe clientes',
     desc: 'Internet para tu operación y para tus clientes. Con TV para que se queden más tiempo.',
     ideal: 'Ideal para restaurantes, bares, cafés, gimnasios.',
+    href: '#mas-negocio',
   },
   {
     img: equipoImg,
     title: 'Mi equipo necesita comunicarse',
     desc: 'Internet, teléfono y celulares para ti y tu equipo. Todo con un solo proveedor.',
     ideal: 'Ideal para agencias, despachos y negocios familiares.',
+    href: '#estrategico',
   },
 ]
 
@@ -158,7 +161,7 @@ function PlanesNegocios() {
   }
 
   return (
-    <section className="w-full py-24 px-6" style={{ background: 'linear-gradient(180deg, #f0fdfd 0%, #f8fafc 100%)' }}>
+    <section id="planes" className="w-full py-24 px-6" style={{ background: 'linear-gradient(180deg, #f0fdfd 0%, #f8fafc 100%)' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
         <div className="text-center mb-6">
           <span className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
@@ -243,7 +246,7 @@ function ConectaTuNegocio() {
                 <p className="text-sm font-semibold" style={{ color: '#2bbdbd' }}>{u.ideal}</p>
               </div>
               <div className="px-7 py-4" style={{ backgroundColor: '#146071', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                <a href="#planes" className="inline-block font-bold text-white text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90"
+                <a href={u.href} className="inline-block font-bold text-white text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90"
                   style={{ backgroundColor: '#2bbdbd', boxShadow: '0 4px 14px rgba(43,189,189,0.4)' }}>
                   Ver plan →
                 </a>
@@ -257,9 +260,9 @@ function ConectaTuNegocio() {
 }
 
 // ─── Plan Bundle Section (shared pattern for Más Negocio + Estratégico) ────────
-function PlanBundle({ img, tag, tagline, features, price, speed, note }) {
+function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
   return (
-    <section className="w-full overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+    <section id={id} className="w-full overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
 
       {/* Header centrado */}
       <div className="text-center px-6 pt-16 pb-10">
@@ -602,6 +605,7 @@ export default function Negocios() {
       <PlanesNegocios />
       <PlanBundle
         img={masNegocioImg}
+        id="mas-negocio"
         tag="PLAN ABIX · MÁS NEGOCIO"
         tagline="La mesa que se queda a ver el segundo tiempo es la mesa que pide otra ronda."
         features={[
@@ -616,6 +620,7 @@ export default function Negocios() {
       />
       <PlanBundle
         img={estrategicoImg}
+        id="estrategico"
         tag="PLAN ABIX · ESTRATÉGICO"
         tagline="El internet de tu negocio, la línea de tu mostrador y el celular tuyo y de tu mano derecha. Todo con ABIX."
         features={[
