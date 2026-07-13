@@ -32,9 +32,8 @@ export default function HogarPlusSection() {
       {/* ── MOBILE ── */}
       <div className="md:hidden" style={{ backgroundColor: '#061a20' }}>
         {/* Imagen */}
-        <div className="relative w-full">
-          <img src={hogarMobileImg} alt="ABIX Hogar Plus" className="w-full h-auto block" />
-          <div className="absolute bottom-0 left-0 right-0" style={{ height: '50%', background: 'linear-gradient(to top, #061a20 0%, transparent 100%)' }} />
+        <div className="relative w-full" style={{ height: '60vw', minHeight: '260px', backgroundImage: `url(${hogarMobileImg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+          <div className="absolute bottom-0 left-0 right-0" style={{ height: '60%', background: 'linear-gradient(to top, #061a20 0%, transparent 100%)' }} />
         </div>
 
         {/* Contenido */}
@@ -89,10 +88,9 @@ export default function HogarPlusSection() {
       </div>
 
       {/* ── DESKTOP ── */}
-      <div className="hidden md:block relative w-full" style={{ minHeight: '560px' }}>
-        <img src={hogarImg} alt="Casa conectada ABIX Hogar Plus" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="hidden md:block relative w-full" style={{ minHeight: '700px', backgroundImage: `url(${hogarImg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,42,50,0.65) 0%, rgba(14,42,50,0.4) 55%, rgba(14,42,50,0.05) 100%)' }} />
-        <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '560px' }}>
+        <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '700px' }}>
           <div style={{ maxWidth: '520px' }}>
             <ul className="flex flex-col gap-4 mb-10">
               {features.map((f) => (
