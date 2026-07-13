@@ -5,6 +5,7 @@ import ClientesSection from '@/components/ClientesSection'
 
 // Images
 import heroImg from '@/assets/img/BUSINESS-DESKTOP.png'
+import personajeHeroImg from '@/assets/img/emprendedores-negocios.png'
 import soloInternetImg from '@/assets/img/boutique-negocios.jpg'
 import clientesImg from '@/assets/img/restaurante-negocios.jpg'
 import equipoImg from '@/assets/img/imprenta-negocios.jpg'
@@ -544,46 +545,37 @@ function ClosingNegocios() {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function HeroNegocios() {
   return (
-    <section className="w-full relative overflow-hidden pt-16" style={{ minHeight: '90vh', backgroundColor: '#0a2830' }}>
-      <img src={heroImg} alt="ABIX Negocios" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0"
-        style={{ background: 'linear-gradient(to right, rgba(6,26,32,0.92) 0%, rgba(6,26,32,0.75) 50%, rgba(6,26,32,0.2) 100%)' }} />
+    <section className="w-full relative pt-16" style={{ backgroundColor: '#146071', minHeight: '580px', overflow: 'visible' }}>
+      <div className="relative mx-auto flex flex-row items-end justify-between px-6"
+        style={{ maxWidth: '1340px', minHeight: '580px' }}>
 
-      <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-24"
-        style={{ maxWidth: '1340px', minHeight: '90vh' }}>
-        <div style={{ maxWidth: '560px' }}>
-          <span className="inline-block font-bold tracking-widest text-xs uppercase px-4 py-1.5 rounded-full mb-6"
-            style={{ backgroundColor: 'rgba(43,189,189,0.2)', color: '#2bbdbd', border: '1px solid rgba(43,189,189,0.35)' }}>
-            Internet para Negocios · Riviera Maya
-          </span>
-          <h1 className="font-extrabold text-white leading-tight mb-5"
-            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}>
+        {/* Text — centrado verticalmente */}
+        <div className="flex flex-col justify-center py-16 self-center" style={{ maxWidth: '500px', zIndex: 2 }}>
+          <h1 className="font-extrabold text-white leading-tight mb-4"
+            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em' }}>
             El internet que tu negocio necesita.<br />
-            <span style={{ color: '#2bbdbd' }}>Todos los días.</span>
+            <span style={{ color: '#a8eaea' }}>Todos los días.</span>
           </h1>
-          <p className="mb-8" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>
-            Fibra óptica con línea telefónica incluida para tu negocio en la Riviera Maya.
+          <p className="mb-5" style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>
+            Fibra óptica con línea telefónica ilimitada incluida para tu negocio en la Riviera Maya.
           </p>
-          <div className="flex items-baseline gap-2 mb-8">
-            <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', fontWeight: 600 }}>Planes para negocios desde</span>
-            <span className="font-extrabold text-white"
-              style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-              $599<span className="text-lg font-semibold">/mes</span>
-            </span>
+          <div className="mb-7">
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>Planes para negocios desde:</p>
+            <p className="font-extrabold text-white leading-none"
+              style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
+              Desde $599
+            </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
-              className="font-bold text-white inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:scale-105 hover:shadow-xl"
-              style={{ backgroundColor: '#005665', fontSize: '1rem', padding: '1rem 2rem' }}>
-              Lo quiero
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              className="font-bold text-white inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:opacity-90"
+              style={{ backgroundColor: '#2bbdbd', fontSize: '1rem', padding: '0.9rem 2rem', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}>
+              ¡Lo quiero!
             </a>
             <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
-              className="font-bold inline-flex items-center justify-center gap-2 rounded-2xl border-2 transition-all hover:scale-105"
-              style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)', fontSize: '1rem', padding: '1rem 2rem', backgroundColor: 'rgba(255,255,255,0.08)' }}>
-              <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+              className="font-bold inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:opacity-90"
+              style={{ color: '#fff', fontSize: '1rem', padding: '0.9rem 2rem', backgroundColor: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)' }}>
+              <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.849L.057 23.571a.75.75 0 0 0 .93.906l5.889-1.545A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.372l-.36-.214-3.733.979.997-3.645-.234-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
               </svg>
@@ -591,6 +583,12 @@ function HeroNegocios() {
             </a>
           </div>
         </div>
+
+        {/* Imagen que sobresale por abajo */}
+        <div className="hidden md:block flex-shrink-0 self-end" style={{ height: '920px', marginBottom: '-80px' }}>
+          <img src={personajeHeroImg} alt="ABIX Negocios" className="h-full w-auto object-contain object-bottom" />
+        </div>
+
       </div>
     </section>
   )
