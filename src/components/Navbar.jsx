@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import logoAbix from '@/assets/logo-abix.png'
 
@@ -13,6 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
@@ -25,15 +27,22 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-gray-700 hover:text-[#2bbdbd] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className="relative text-sm font-medium transition-colors pb-1"
+                style={{ color: isActive ? '#2bbdbd' : '#374151' }}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full" style={{ backgroundColor: '#2bbdbd' }} />
+                )}
+              </a>
+            )
+          })}
 
           {/* WhatsApp button */}
           <a
@@ -59,16 +68,20 @@ export default function Navbar() {
       {/* Mobile nav */}
       {open && (
         <nav className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-gray-700 hover:text-[#2bbdbd]"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium transition-colors"
+                style={{ color: isActive ? '#2bbdbd' : '#374151' }}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            )
+          })}
         </nav>
       )}
     </header>
