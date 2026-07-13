@@ -322,9 +322,6 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, savings, 
                   style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.45)' }}>
                   ¡Lo quiero!
                 </a>
-                <a href="#planes" className="text-center text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                  Ver todos los planes →
-                </a>
               </div>
             </div>
             {note && <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.4)' }}>{note}</p>}
