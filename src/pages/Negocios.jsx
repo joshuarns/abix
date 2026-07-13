@@ -285,7 +285,7 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
       <div className="relative w-full" style={{ minHeight: '700px' }}>
         <img src={img} alt={tag} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.92) 0%, rgba(6,26,32,0.65) 50%, rgba(6,26,32,0.05) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.65) 0%, rgba(6,26,32,0.4) 55%, rgba(6,26,32,0.05) 100%)' }}
         />
         <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '700px' }}>
           <div style={{ maxWidth: '500px' }}>
