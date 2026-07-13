@@ -125,13 +125,11 @@ function PlanCard({ plan, isHovered, onEnter, onLeave }) {
         <span className="block" style={{ fontSize: '0.8rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.7)' : '#94a3b8', fontWeight: 600 }}>/mes</span>
       </div>
       {/* Velocidades */}
-      <div className="text-center mb-1">
-        <p style={{ fontSize: '0.78rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.85)' : '#475569', fontWeight: 600 }}>
-          ↓ {plan.down >= 1000 ? '1,000' : plan.down} Mbps &nbsp;·&nbsp; ↑ {plan.up} Mbps
-        </p>
-      </div>
+      <p className="text-center mb-1" style={{ fontSize: '0.82rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.8)' : '#475569' }}>
+        {plan.down >= 1000 ? '1,000' : plan.down} Mbps <span style={{ fontWeight: 400, opacity: 0.75 }}>simétrico</span>
+      </p>
       {/* Ideal */}
-      <p className="text-center mb-4" style={{ fontSize: '0.68rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8', lineHeight: 1.4 }}>
+      <p className="text-center mb-4 font-semibold" style={{ fontSize: '0.95rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.85)' : '#475569', lineHeight: 1.4 }}>
         {plan.ideal}
       </p>
       <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
