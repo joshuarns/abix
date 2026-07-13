@@ -133,7 +133,7 @@ function PlanCard({ plan, isHovered, onEnter, onLeave }) {
       <p className="text-center mb-4" style={{ fontSize: '0.68rem', color: plan.featured || isHovered ? 'rgba(255,255,255,0.6)' : '#94a3b8', lineHeight: 1.4 }}>
         {plan.ideal}
       </p>
-      <a href="#contratar" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
+      <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
         style={{
           backgroundColor: plan.featured ? '#e02020' : isHovered ? 'rgba(255,255,255,0.2)' : '#f1f5f9',
           color: plan.featured || isHovered ? '#fff' : '#146071',
@@ -282,12 +282,12 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
       </div>
 
       {/* Imagen con contenido superpuesto */}
-      <div className="relative w-full" style={{ minHeight: '520px' }}>
+      <div className="relative w-full" style={{ minHeight: '700px' }}>
         <img src={img} alt={tag} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.92) 0%, rgba(6,26,32,0.65) 50%, rgba(6,26,32,0.05) 100%)' }}
         />
-        <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '520px' }}>
+        <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '700px' }}>
           <div style={{ maxWidth: '500px' }}>
             <ul className="flex flex-col gap-3 mb-8">
               {features.map((f) => (
@@ -312,7 +312,7 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <a href="#contratar" className="font-bold text-white px-7 py-3 rounded-xl transition-all hover:opacity-90"
+                <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="font-bold text-white px-7 py-3 rounded-xl transition-all hover:opacity-90"
                   style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.45)' }}>
                   ¡Lo quiero!
                 </a>
@@ -468,7 +468,7 @@ function FibraNoLlega() {
                     </span>
                     <span className="text-gray-400 text-sm">/mes</span>
                   </div>
-                  <a href="#contratar" className="font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90"
+                  <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90"
                     style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.35)', whiteSpace: 'nowrap' }}>
                     Lo quiero
                   </a>
@@ -522,7 +522,7 @@ function ClosingNegocios() {
           Conecta tu negocio hoy. Fibra óptica con línea telefónica incluida en la Riviera Maya.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#contratar" className="font-bold text-white px-10 py-3.5 rounded-2xl transition-all hover:opacity-90 hover:scale-105 text-center"
+          <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="font-bold text-white px-10 py-3.5 rounded-2xl transition-all hover:opacity-90 hover:scale-105 text-center"
             style={{ backgroundColor: '#2bbdbd', fontSize: '1.05rem', boxShadow: '0 6px 24px rgba(43,189,189,0.4)' }}>
             Lo quiero
           </a>
@@ -572,7 +572,7 @@ function HeroNegocios() {
             </span>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="#contratar"
+            <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
               className="font-bold text-white inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:scale-105 hover:shadow-xl"
               style={{ backgroundColor: '#005665', fontSize: '1rem', padding: '1rem 2rem' }}>
               Lo quiero

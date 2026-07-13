@@ -72,7 +72,7 @@ export default function FamiliaSection() {
               </p>
             </div>
             <a
-              href="#contratar"
+              href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
               className="w-full text-center font-bold py-3.5 rounded-2xl transition-all hover:opacity-90"
               style={{ backgroundColor: '#2bbdbd', color: '#fff', fontSize: '1rem', boxShadow: '0 4px 16px rgba(43,189,189,0.4)' }}
             >
@@ -118,7 +118,7 @@ export default function FamiliaSection() {
               </div>
               <div className="flex items-center gap-4 flex-wrap">
                 <a
-                  href="#contratar"
+                  href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
                   className="font-bold py-3 px-8 rounded-2xl transition-all hover:opacity-90 hover:scale-105"
                   style={{ backgroundColor: '#2bbdbd', color: '#fff', fontSize: '0.95rem', boxShadow: '0 4px 16px rgba(43,189,189,0.4)', whiteSpace: 'nowrap' }}
                 >

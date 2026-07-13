@@ -258,7 +258,7 @@ function PlanCard({ plan, i, isHovered, setHovered }) {
       {/* Perks — comentado temporalmente
       <ul>...</ul>
       */}
-      <a href="#contratar" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
+      <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
         style={{
           backgroundColor: plan.featured ? '#e02020' : isHovered ? 'rgba(255,255,255,0.2)' : '#f1f5f9',
           color: plan.featured || isHovered ? '#ffffff' : '#146071',
