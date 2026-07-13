@@ -40,7 +40,7 @@ const socials = [
 
 const badges = [
   { label: 'Fibra 100% propia', icon: '🔗' },
-  { label: 'Sin contratos', icon: '✓' },
+  { label: 'Instalación rápida', icon: '✓' },
   { label: 'Soporte 24/7', icon: '🕐' },
   { label: '+6,000 familias', icon: '❤' },
 ]
