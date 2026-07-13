@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
 import FiberSection from '@/components/FiberSection'
 import PlansSection from '@/components/PlansSection'
 import DiferenciadoresSection from '@/components/DiferenciadoresSection'
+import ClientesSection from '@/components/ClientesSection'
 import MeshSection from '@/components/MeshSection'
 import HogarPlusSection from '@/components/HogarPlusSection'
 import FamiliaSection from '@/components/FamiliaSection'
@@ -85,6 +86,7 @@ export default function Home() {
       <FiberSection />
       <PlansSection />
       <DiferenciadoresSection />
+      <ClientesSection />
       <MeshSection />
       <HogarPlusSection />
       <FamiliaSection />
