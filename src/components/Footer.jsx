@@ -158,6 +158,54 @@ export default function Footer() {
         ))}
       </div>
 
+      {/* Legales */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8" style={{ maxWidth: '1340px' }}>
+
+          {/* Links legales */}
+          <div className="flex flex-col gap-3">
+            <h4 className="font-extrabold text-white text-sm tracking-wide" style={{ fontFamily: "'Montserrat Alternates', sans-serif" }}>
+              LEGALES
+            </h4>
+            <ul className="flex flex-col gap-2">
+              {[
+                'Código de Prácticas Comerciales',
+                'Contratos',
+                'Cobertura',
+                'Aviso de Privacidad',
+                'Tarifas',
+                'Derechos de los Usuarios',
+                'Colaboración Justa',
+                'Política de Gestión de Tráfico',
+                'Lineamientos de información',
+              ].map((label) => (
+                <li key={label}>
+                  <a href="#" className="text-sm transition-colors" style={{ color: 'rgba(255,255,255,0.45)' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#2bbdbd'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.45)'}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Aviso IFT */}
+          <div className="rounded-2xl p-6" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
+              En cumplimiento a lo dispuesto en el ACUERDO MEDIANTE EL CUAL EL PLENO DEL INSTITUTO FEDERAL DE TELECOMUNICACIONES EXPIDE LOS LINEAMIENTOS DE COLABORACIÓN EN MATERIA DE SEGURIDAD Y JUSTICIA Y MODIFICA EL PLAN TÉCNICO FUNDAMENTAL DE NUMERACIÓN, PUBLICADO EN EL DIARIO OFICIAL DE LA FEDERACIÓN EL 21 DE JUNIO DE 1996" y publicado en el Diario Oficial de la Federación el 2 de diciembre de 2015 (el "Acuerdo"), en este acto se informa a las Autoridades Facultadas y/o Designadas lo siguiente:
+            </p>
+            <p className="mt-3" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
+              El Área Responsable: Dirección Legal, con correo electrónico legal@abix.mx, teléfono 5511070548
+            </p>
+            <p className="mt-3" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
+              DOMICILIO PARA RECIBIR DOCUMENTACION FISICA: Bosque de Radiatas número 32, despacho 601, Colonia Bosques de las Lomas, C.P. 05120, en Ciudad de México.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
       {/* WhatsApp CTA flotante — dentro del footer */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <div
