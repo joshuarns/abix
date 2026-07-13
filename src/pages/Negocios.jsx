@@ -697,8 +697,9 @@ export default function Negocios() {
           'Aumenta tu ticket promedio',
           'Mantén a tus clientes cómodos y conectados',
         ]}
-        price={948}
+        price={849}
         speed={300}
+        savings="AHORRA $99 al mes"
       />
       <PlanBundle
         img={estrategicoImg}
