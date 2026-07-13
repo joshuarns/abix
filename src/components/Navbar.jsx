@@ -4,7 +4,7 @@ import logoAbix from '@/assets/logo-abix.png'
 
 const navLinks = [
   { label: 'Residencial', href: '#residencial' },
-  { label: 'Negocios', href: '#negocios' },
+  { label: 'Negocios', href: '/negocios' },
   { label: 'Hoteles', href: '#hoteles' },
   { label: 'Empresas', href: '#empresas' },
   { label: 'ABIX', href: '#abix' },
