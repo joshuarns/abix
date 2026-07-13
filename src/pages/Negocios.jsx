@@ -311,8 +311,7 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, savings, 
                   ${price.toLocaleString('en-US')}<span className="text-base font-semibold">/mes</span>
                 </p>
                 {savings && (
-                  <span className="inline-block mt-2 text-xs font-bold px-3 py-1 rounded-full"
-                    style={{ backgroundColor: '#2bbdbd', color: '#fff' }}>
+                  <span className="inline-block mt-2 text-xs font-bold" style={{ color: '#2bbdbd' }}>
                     {savings}
                   </span>
                 )}
