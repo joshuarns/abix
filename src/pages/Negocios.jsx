@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ClientesSection from '@/components/ClientesSection'
@@ -330,59 +330,124 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
 
 // ─── Más Velocidad Section ─────────────────────────────────────────────────────
 function MasVelocidad() {
-  const cols = [
+  const slides = [
     {
       img: simetricoImg,
-      title: 'ABIX Fiber simétrico',
+      titleBlack: 'ABIX Fiber',
+      titleTeal: 'simétrico',
       desc: 'Misma velocidad para subir y para bajar. Ideal para videoconferencias, nube intensiva y operaciones que dependen de enviar tanta información como reciben.',
       cta: 'Cuéntanos qué necesitas',
     },
     {
       img: wifiNegocioImg,
-      title: 'WiFi en todo tu negocio',
+      titleBlack: 'WiFi en todo',
+      titleTeal: 'tu negocio',
       desc: 'Cada negocio es diferente. Un restaurante con terraza no se resuelve igual que una oficina. Diseñamos la cobertura WiFi que tu espacio necesita.',
       cta: 'Platiquemos',
     },
     {
       img: lineasMovilesImg,
-      title: 'Líneas móviles',
+      titleBlack: 'Líneas',
+      titleTeal: 'móviles',
       desc: 'Si tu equipo necesita líneas adicionales, encontramos el plan que se ajuste a tu operación.',
       cta: 'Platiquemos',
     },
   ]
 
+  const [current, setCurrent] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
+  const timerRef = useRef(null)
+
+  useEffect(() => {
+    const check = () => {
+      setIsMobile(window.innerWidth < 640)
+      setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024)
+    }
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  const visibleSlides = isMobile ? 1 : isTablet ? 2 : 3
+  const GAP = isMobile ? 16 : 30
+  const maxIndex = slides.length - visibleSlides
+
+  const resetTimer = () => {
+    clearInterval(timerRef.current)
+    timerRef.current = setInterval(() => setCurrent((c) => (c >= maxIndex ? 0 : c + 1)), 5000)
+  }
+
+  useEffect(() => {
+    resetTimer()
+    return () => clearInterval(timerRef.current)
+  }, [maxIndex])
+
   return (
     <section className="w-full py-20 px-6" style={{ backgroundColor: '#f8fafc' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
-        <div className="text-center mb-14">
-          <h2 className="font-extrabold text-gray-900"
-            style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', letterSpacing: '-0.02em' }}>
-            ¿Necesitas más velocidad, más líneas{' '}
-            <span style={{ color: '#2bbdbd' }}>o una solución a medida?</span>
-          </h2>
+        <h2 className="text-center font-extrabold text-gray-900 mb-10"
+          style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', letterSpacing: '-0.02em' }}>
+          ¿Necesitas más velocidad, más líneas{' '}
+          <span style={{ color: '#2bbdbd' }}>o una solución a medida?</span>
+        </h2>
+
+        <div className={isMobile ? '-mx-6 px-6' : ''} style={{ touchAction: 'pan-y', overflow: 'hidden', padding: '16px 12px 24px' }}>
+          <div
+            style={{
+              display: 'flex',
+              gap: `${GAP}px`,
+              transform: isMobile
+                ? `translateX(calc(-${current} * (85% + ${GAP}px)))`
+                : `translateX(calc(-${current} * (calc(100% / ${visibleSlides} + ${GAP * (visibleSlides - 1) / visibleSlides}px))))`,
+              transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+              willChange: 'transform',
+            }}
+          >
+            {slides.map((s, i) => (
+              <div
+                key={i}
+                className="overflow-hidden rounded-2xl cursor-pointer shrink-0 flex flex-col bg-white"
+                style={{
+                  width: isMobile ? '85%' : `calc((100% - ${GAP * (visibleSlides - 1)}px) / ${visibleSlides})`,
+                  boxShadow: current === i ? '0 20px 48px rgba(43,189,189,0.2)' : '0 4px 20px rgba(0,0,0,0.07)',
+                  transform: current === i && !isMobile ? 'translateY(-4px)' : 'none',
+                  transition: 'box-shadow 0.4s ease, transform 0.4s ease',
+                  border: current === i ? '2px solid rgba(43,189,189,0.4)' : '2px solid transparent',
+                }}
+                onClick={() => { setCurrent(Math.max(0, Math.min(i, maxIndex))); resetTimer() }}
+              >
+                <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
+                  <img src={s.img} alt={s.titleBlack} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                    style={{ transform: current === i ? 'scale(1.04)' : 'scale(1)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(6,26,32,0.52) 0%, rgba(6,26,32,0.05) 50%, transparent 100%)' }} />
+                  <div className="absolute top-0 left-0 right-0 p-5">
+                    <h3 className="font-extrabold leading-snug text-white"
+                      style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)' }}>
+                      {s.titleBlack}{' '}<span style={{ color: '#a8eaea' }}>{s.titleTeal}</span>
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3 px-5 py-4 flex-1">
+                  <div style={{ width: '28px', height: '3px', backgroundColor: '#2bbdbd', borderRadius: '9999px' }} />
+                  <p className="leading-relaxed flex-1" style={{ fontSize: '0.875rem', color: '#64748b' }}>{s.desc}</p>
+                  <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+                    className="inline-block font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 text-center"
+                    style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
+                    {s.cta}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {cols.map((c) => (
-            <div key={c.title} className="group flex flex-col rounded-2xl overflow-hidden"
-              style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.07)', backgroundColor: '#fff', transition: 'transform 0.3s ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)' }}>
-              <div className="overflow-hidden">
-                <img src={c.img} alt={c.title} className="w-full h-auto block transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="px-6 py-6 flex flex-col gap-3 flex-1">
-                <h3 className="font-extrabold text-gray-900"
-                  style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: '1.1rem' }}>
-                  {c.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed flex-1">{c.desc}</p>
-                <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
-                  className="inline-block font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 text-center mt-2"
-                  style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
-                  {c.cta}
-                </a>
-              </div>
-            </div>
+
+        <div className="flex justify-center gap-2 mt-2">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <button key={i} onClick={() => { setCurrent(i); resetTimer() }}
+              className="rounded-full transition-all duration-500"
+              style={{ width: i === current ? '28px' : '10px', height: '10px', backgroundColor: i === current ? '#2bbdbd' : '#cbd5e1' }}
+              aria-label={`Ir a slide ${i + 1}`} />
           ))}
         </div>
       </div>
