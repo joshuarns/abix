@@ -261,7 +261,7 @@ function ConectaTuNegocio() {
 }
 
 // ─── Plan Bundle Section (shared pattern for Más Negocio + Estratégico) ────────
-function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
+function PlanBundle({ img, tag, tagline, features, price, speed, note, savings, id }) {
   return (
     <section id={id} className="w-full overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
 
@@ -310,6 +310,12 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, id }) {
                   style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)' }}>
                   ${price.toLocaleString('en-US')}<span className="text-base font-semibold">/mes</span>
                 </p>
+                {savings && (
+                  <span className="inline-block mt-2 text-xs font-bold px-3 py-1 rounded-full"
+                    style={{ backgroundColor: '#2bbdbd', color: '#fff' }}>
+                    {savings}
+                  </span>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="font-bold text-white px-7 py-3 rounded-xl transition-all hover:opacity-90"
@@ -706,8 +712,9 @@ export default function Negocios() {
           'Redes sociales ilimitadas',
           '1 Línea fija con llamadas ilimitadas',
         ]}
-        price={997}
+        price={1048}
         speed={300}
+        savings="AHORRA $99 al mes"
       />
       <MasVelocidad />
       <FibraNoLlega />
