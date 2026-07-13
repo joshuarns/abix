@@ -305,13 +305,13 @@ function PlanBundle({ img, tag, tagline, features, price, speed, note, savings, 
             <div className="rounded-2xl p-5 flex items-center justify-between gap-4 flex-wrap"
               style={{ backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)' }}>
               <div>
-                <p className="text-white text-xs mb-0.5" style={{ opacity: 0.6 }}>Plan con {speed} Megas</p>
+                <p className="text-white font-semibold mb-0.5" style={{ opacity: 0.75, fontSize: '0.9rem' }}>Plan con {speed} Megas</p>
                 <p className="text-white font-extrabold leading-none"
                   style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)' }}>
-                  ${price.toLocaleString('en-US')}<span className="text-base font-semibold">/mes</span>
+                  ${price.toLocaleString('en-US')}<span className="text-lg font-semibold">/mes</span>
                 </p>
                 {savings && (
-                  <span className="inline-block mt-2 text-xs font-bold" style={{ color: '#2bbdbd' }}>
+                  <span className="inline-block mt-2 font-bold" style={{ color: '#2bbdbd', fontSize: '0.95rem' }}>
                     {savings}
                   </span>
                 )}
