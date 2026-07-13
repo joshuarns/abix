@@ -326,7 +326,7 @@ function MasVelocidad() {
       cta: 'Cuéntanos qué necesitas',
     },
     {
-      img: meshImg,
+      img: clientesImg,
       title: 'WiFi en todo tu negocio',
       desc: 'Cada negocio es diferente. Un restaurante con terraza no se resuelve igual que una oficina. Diseñamos la cobertura WiFi que tu espacio necesita.',
       cta: 'Platiquemos',
@@ -355,8 +355,8 @@ function MasVelocidad() {
               style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.07)', backgroundColor: '#fff', transition: 'transform 0.3s ease' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)' }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)' }}>
-              <div className="overflow-hidden" style={{ height: '200px' }}>
-                <img src={c.img} alt={c.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="overflow-hidden">
+                <img src={c.img} alt={c.title} className="w-full h-auto block transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="px-6 py-6 flex flex-col gap-3 flex-1">
                 <h3 className="font-extrabold text-gray-900"
