@@ -43,7 +43,7 @@ export default function FamiliaSection() {
 
       {/* ── MOBILE ── */}
       <div className="md:hidden" style={{ backgroundColor: '#061a20' }}>
-        <div className="relative w-full" style={{ height: '60vw', minHeight: '260px', backgroundImage: `url(${familiaMobileImg})`, backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed' }}>
+        <div className="relative w-full" style={{ height: '60vw', minHeight: '260px', backgroundImage: `url(${familiaMobileImg})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}>
           <div className="absolute bottom-0 left-0 right-0" style={{ height: '60%', background: 'linear-gradient(to top, #061a20 0%, transparent 100%)' }} />
         </div>
 
@@ -82,7 +82,7 @@ export default function FamiliaSection() {
       </div>
 
       {/* ── DESKTOP ── */}
-      <div className="hidden md:block relative w-full" style={{ minHeight: '700px', backgroundImage: `url(${familiaImg})`, backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'fixed' }}>
+      <div className="hidden md:block relative w-full" style={{ minHeight: '700px', backgroundImage: `url(${familiaImg})`, backgroundSize: 'cover', backgroundPosition: 'center top', backgroundAttachment: 'scroll' }}>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(6,26,32,0.65) 0%, rgba(6,26,32,0.4) 50%, rgba(6,26,32,0.05) 100%)' }} />
 
         <div className="relative z-10 mx-auto flex flex-col justify-center h-full px-6 py-16" style={{ maxWidth: '1340px', minHeight: '700px' }}>
