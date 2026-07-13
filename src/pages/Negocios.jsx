@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ClientesSection from '@/components/ClientesSection'
 
 // Images
 import heroImg from '@/assets/img/BUSINESS-DESKTOP.png'
@@ -636,6 +637,7 @@ export default function Negocios() {
       <MasVelocidad />
       <FibraNoLlega />
       <Diferenciadores />
+      <ClientesSection />
       <ClosingNegocios />
       <Footer />
       <WhatsAppFloat />
