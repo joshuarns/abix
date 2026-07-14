@@ -12,7 +12,8 @@ const products = [
     desc: 'Solo enchúfalo y listo.',
     detail: '5, 10 ó 20 Mbps',
     badge: 'Sin instalación',
-    cta: 'Ver planes',
+    cta: 'Lo quiero',
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20To%20Go',
     bullets: ['Sin contratos', 'Plug & play', 'Portátil'],
   },
   {
@@ -24,7 +25,8 @@ const products = [
     desc: 'Playa, cenote, carretera.',
     detail: 'Red 4.5G',
     badge: 'Sin obra',
-    cta: 'Ver planes',
+    cta: 'Lo quiero',
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20LTE',
     bullets: ['Sin cableado', 'Activación inmediata', 'Red 4.5G'],
   },
 ]
@@ -75,7 +77,7 @@ function LteCard({ p }) {
             <span className="text-gray-400 text-sm">/mes</span>
           </div>
         </div>
-        <a href="#" className="w-full text-center font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105"
+        <a href={p.href} target="_blank" rel="noopener noreferrer" className="w-full text-center font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105"
           style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 14px rgba(43,189,189,0.35)' }}>
           {p.cta}
         </a>

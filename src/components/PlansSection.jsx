@@ -8,7 +8,7 @@ const plans = [
     speed: 60,
     featured: false,
     ideal: 'Empieza a disfrutar la mejor conexión',
-    perks: ['Navegación fluida', 'Streaming HD', 'Home office básico'],
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%2060%2B%20Residencial',
   },
   {
     name: 'FIBER 100+',
@@ -16,7 +16,7 @@ const plans = [
     speed: 100,
     featured: false,
     ideal: 'Más espacio para todo lo que haces',
-    perks: ['Streaming 4K', 'Videollamadas estables', 'Varios dispositivos'],
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20100%2B%20Residencial',
   },
   {
     name: 'FIBER 150+',
@@ -24,7 +24,7 @@ const plans = [
     speed: 150,
     featured: false,
     ideal: 'Espacio de sobra para todo tu hogar',
-    perks: ['Gaming online', 'Smart home', 'Downloads rápidos'],
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20150%2B%20Residencial',
   },
   {
     name: 'FIBER 300+',
@@ -32,7 +32,7 @@ const plans = [
     speed: 300,
     featured: true,
     ideal: 'Vive y navega sin ningún límite',
-    perks: ['Máximo rendimiento', 'Gaming sin lag', 'Toda la familia conectada'],
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20300%2B%20Residencial',
   },
   {
     name: 'FIBER 500+',
@@ -40,7 +40,7 @@ const plans = [
     speed: 500,
     featured: false,
     ideal: 'Rendimiento y confiabilidad total',
-    perks: ['Home office avanzado', 'Múltiples streams 4K', 'Backups en la nube'],
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20500%2B%20Residencial',
   },
   {
     name: 'FIBER 1000+',
@@ -48,7 +48,7 @@ const plans = [
     speed: 1000,
     featured: false,
     ideal: 'Lo mejor de la tecnología ABIX',
-    perks: ['Velocidad ilimitada', 'Servidor en casa', 'Sin límites'],
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%201000%2B%20Residencial',
   },
 ]
 
@@ -258,7 +258,7 @@ function PlanCard({ plan, i, isHovered, setHovered }) {
       {/* Perks — comentado temporalmente
       <ul>...</ul>
       */}
-      <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
+      <a href={plan.href} target="_blank" rel="noopener noreferrer" className="block text-center font-bold py-2.5 rounded-xl text-sm transition-all mt-auto"
         style={{
           backgroundColor: plan.featured ? '#e02020' : isHovered ? 'rgba(255,255,255,0.2)' : '#f1f5f9',
           color: plan.featured || isHovered ? '#ffffff' : '#146071',

@@ -10,8 +10,9 @@ const products = [
     tagline: 'Más de 100 canales HD',
     desc: 'Deportes, noticias, películas, series, infantiles y más. Todo en alta definición.',
     price: '$129',
-    cta: 'Quiero ABIX TV',
+    cta: 'Lo quiero',
     accent: '#146071',
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20TV',
   },
   {
     img: movilImg,
@@ -19,8 +20,9 @@ const products = [
     tagline: 'Todos comunicados, en un solo lugar',
     desc: 'Pon a cada miembro de tu familia en contacto. Llamadas, datos y más desde un solo plan.',
     price: '$99',
-    cta: 'Quiero ABIX MÓVIL',
+    cta: 'Lo quiero',
     accent: '#146071',
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20M%C3%B3vil',
   },
   {
     img: wifiImg,
@@ -28,8 +30,9 @@ const products = [
     tagline: 'Internet en toda tu casa',
     desc: 'Evaluamos tu hogar y te recomendamos la mejor cobertura para cada rincón.',
     price: '$129',
-    cta: 'Quiero mejor WiFi',
+    cta: 'Lo quiero',
     accent: '#146071',
+    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20WiFi%20Total',
   },
 ]
 
@@ -59,7 +62,7 @@ function ProductCard({ p }) {
               {p.price}<span className="text-sm font-semibold">/mes</span>
             </p>
           </div>
-          <a href="#" className="w-full text-center font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105"
+          <a href={p.href} target="_blank" rel="noopener noreferrer" className="w-full text-center font-bold text-sm px-5 py-2.5 rounded-xl transition-all hover:opacity-90 hover:scale-105"
             style={{ backgroundColor: '#2bbdbd', color: '#fff', boxShadow: '0 3px 10px rgba(43,189,189,0.4)' }}>
             Lo quiero
           </a>

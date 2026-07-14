@@ -76,7 +76,7 @@ export default function HogarPlusSection() {
                 </p>
                 <span style={{ fontSize: '0.9rem', color: '#2bbdbd', fontWeight: 700 }}>AHORRA $99 al mes</span>
               </div>
-              <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20Hogar%20Plus" target="_blank" rel="noopener noreferrer"
                 className="font-bold text-white px-6 py-3 rounded-xl transition-all hover:opacity-90 shrink-0"
                 style={{ backgroundColor: '#2bbdbd', fontSize: '0.95rem', boxShadow: '0 4px 20px rgba(43,189,189,0.45)' }}>
                 ¡Lo quiero!
@@ -120,7 +120,7 @@ export default function HogarPlusSection() {
                   </p>
                   <span style={{ fontSize: '0.9rem', color: '#2bbdbd', fontWeight: 700 }}>AHORRA $99 al mes</span>
                 </div>
-                <a href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20Hogar%20Plus" target="_blank" rel="noopener noreferrer"
                   className="font-bold text-white px-8 py-3 rounded-xl transition-all hover:opacity-90 hover:scale-105 inline-block"
                   style={{ backgroundColor: '#2bbdbd', fontSize: '1rem', boxShadow: '0 4px 20px rgba(43,189,189,0.45)' }}>
                   ¡Lo quiero!

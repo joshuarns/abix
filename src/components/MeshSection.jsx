@@ -190,7 +190,7 @@ export default function MeshSection() {
           </p>
 
           <a
-            href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+            href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20Mesh%20para%20mi%20hogar" target="_blank" rel="noopener noreferrer"
             className="mt-4 font-bold text-white px-8 py-3 rounded-xl transition-opacity hover:opacity-90"
             style={{
               backgroundColor: '#2bbdbd',
