@@ -32,8 +32,8 @@ export default function HogarPlusSection() {
       {/* ── MOBILE ── */}
       <div className="md:hidden" style={{ backgroundColor: '#061a20' }}>
         {/* Imagen */}
-        <div className="relative w-full" style={{ height: '60vw', minHeight: '260px', backgroundImage: `url(${hogarMobileImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <div className="absolute bottom-0 left-0 right-0" style={{ height: '60%', background: 'linear-gradient(to top, #061a20 0%, transparent 100%)' }} />
+        <div className="relative w-full" style={{ height: '85vw', minHeight: '340px', backgroundImage: `url(${hogarMobileImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="absolute bottom-0 left-0 right-0" style={{ height: '35%', background: 'linear-gradient(to top, #061a20 0%, transparent 100%)' }} />
         </div>
 
         {/* Contenido */}
