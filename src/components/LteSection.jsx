@@ -13,7 +13,7 @@ const products = [
     detail: '5, 10 ó 20 Mbps',
     badge: 'Sin instalación',
     cta: 'Lo quiero',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20To%20Go',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20To%20Go',
     bullets: ['Sin contratos', 'Plug & play', 'Portátil'],
   },
   {
@@ -26,7 +26,7 @@ const products = [
     detail: 'Red 4.5G',
     badge: 'Sin obra',
     cta: 'Lo quiero',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20LTE',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20LTE',
     bullets: ['Sin cableado', 'Activación inmediata', 'Red 4.5G'],
   },
 ]

@@ -88,7 +88,7 @@ export default function ClosingSection() {
           <img src={vasAAmarImg} alt="Vas a amar tu internet" style={{ maxWidth: '360px', width: '100%', height: 'auto' }} />
 
           <a
-            href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+            href="https://wa.me/14063441431" target="_blank" rel="noopener noreferrer"
             className="font-bold text-white px-10 py-3.5 rounded-2xl transition-all hover:opacity-90 hover:scale-105"
             style={{
               backgroundColor: '#4caf50',

@@ -136,7 +136,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="h-fade-5 flex flex-col sm:flex-row gap-3">
             <a
-              href="https://wa.me/16012587695" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/14063441431" target="_blank" rel="noopener noreferrer"
               className="font-bold text-white inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:scale-105 hover:shadow-xl"
               style={{ backgroundColor: '#25D366', fontSize: '1rem', padding: '1rem 2rem', boxShadow: '0 4px 16px rgba(37,211,102,0.35)' }}
             >

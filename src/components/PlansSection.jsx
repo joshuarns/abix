@@ -8,7 +8,7 @@ const plans = [
     speed: 60,
     featured: false,
     ideal: 'Empieza a disfrutar la mejor conexión',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%2060%2B%20Residencial',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%2060%2B%20Residencial',
   },
   {
     name: 'FIBER 100+',
@@ -16,7 +16,7 @@ const plans = [
     speed: 100,
     featured: false,
     ideal: 'Más espacio para todo lo que haces',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20100%2B%20Residencial',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20100%2B%20Residencial',
   },
   {
     name: 'FIBER 150+',
@@ -24,7 +24,7 @@ const plans = [
     speed: 150,
     featured: false,
     ideal: 'Espacio de sobra para todo tu hogar',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20150%2B%20Residencial',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20150%2B%20Residencial',
   },
   {
     name: 'FIBER 300+',
@@ -32,7 +32,7 @@ const plans = [
     speed: 300,
     featured: true,
     ideal: 'Vive y navega sin ningún límite',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20300%2B%20Residencial',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20300%2B%20Residencial',
   },
   {
     name: 'FIBER 500+',
@@ -40,7 +40,7 @@ const plans = [
     speed: 500,
     featured: false,
     ideal: 'Rendimiento y confiabilidad total',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20500%2B%20Residencial',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20500%2B%20Residencial',
   },
   {
     name: 'FIBER 1000+',
@@ -48,7 +48,7 @@ const plans = [
     speed: 1000,
     featured: false,
     ideal: 'Lo mejor de la tecnología ABIX',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%201000%2B%20Residencial',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%201000%2B%20Residencial',
   },
 ]
 

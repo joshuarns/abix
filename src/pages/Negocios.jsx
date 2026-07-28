@@ -23,12 +23,12 @@ import vasAAmarImg from '@/assets/img/vas-a-amar-tu-internet-02.png'
 
 // ─── Plan data ────────────────────────────────────────────────────────────────
 const plans = [
-  { name: 'FIBER 60+',   price: 599,  down: 60,   up: 25,  ideal: 'Para operar lo básico sin complicarte',       featured: false, href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%2060%2B' },
-  { name: 'FIBER 100+',  price: 640,  down: 60,   up: 50,  ideal: 'Más estabilidad para tu día a día',           featured: false, href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20100%2B' },
-  { name: 'FIBER 150+',  price: 699,  down: 150,  up: 80,  ideal: 'Ideal para equipos pequeños conectados',      featured: false, href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20150%2B' },
-  { name: 'FIBER 300+',  price: 749,  down: 300,  up: 100, ideal: 'Para negocios con más usuarios y actividad',  featured: true,  href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20300%2B' },
-  { name: 'FIBER 500+',  price: 1099, down: 500,  up: 100, ideal: 'Mayor rendimiento para operaciones exigentes',featured: false, href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20500%2B' },
-  { name: 'FIBER 1000+', price: 1599, down: 1000, up: 100, ideal: 'Máxima capacidad para negocios que no paran', featured: false, href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%201000%2B' },
+  { name: 'FIBER 60+',   price: 599,  down: 60,   up: 25,  ideal: 'Para operar lo básico sin complicarte',       featured: false, href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%2060%2B' },
+  { name: 'FIBER 100+',  price: 640,  down: 60,   up: 50,  ideal: 'Más estabilidad para tu día a día',           featured: false, href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20100%2B' },
+  { name: 'FIBER 150+',  price: 699,  down: 150,  up: 80,  ideal: 'Ideal para equipos pequeños conectados',      featured: false, href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20150%2B' },
+  { name: 'FIBER 300+',  price: 749,  down: 300,  up: 100, ideal: 'Para negocios con más usuarios y actividad',  featured: true,  href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20300%2B' },
+  { name: 'FIBER 500+',  price: 1099, down: 500,  up: 100, ideal: 'Mayor rendimiento para operaciones exigentes',featured: false, href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%20500%2B' },
+  { name: 'FIBER 1000+', price: 1599, down: 1000, up: 100, ideal: 'Máxima capacidad para negocios que no paran', featured: false, href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Fiber%20Negocios%201000%2B' },
 ]
 
 // ─── Use case cards ───────────────────────────────────────────────────────────
@@ -38,21 +38,21 @@ const useCases = [
     title: 'Solo necesito internet',
     desc: 'Fibra óptica para operar tu negocio. Rápida, estable y con línea telefónica incluida.',
     ideal: 'Ideal para tiendas, consultorios, despachos y oficinas.',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20el%20plan%20ABIX%20Fiber%20Negocios%3A%20Solo%20necesito%20internet',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20el%20plan%20ABIX%20Fiber%20Negocios%3A%20Solo%20necesito%20internet',
   },
   {
     img: clientesImg,
     title: 'Mi negocio recibe clientes',
     desc: 'Internet para tu operación y para tus clientes. Con TV para que se queden más tiempo.',
     ideal: 'Ideal para restaurantes, bares, cafés, gimnasios.',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20el%20plan%20ABIX%20Fiber%20Negocios%3A%20Mi%20negocio%20recibe%20clientes',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20el%20plan%20ABIX%20Fiber%20Negocios%3A%20Mi%20negocio%20recibe%20clientes',
   },
   {
     img: equipoImg,
     title: 'Mi equipo necesita comunicarse',
     desc: 'Internet, teléfono y celulares para ti y tu equipo. Todo con un solo proveedor.',
     ideal: 'Ideal para agencias, despachos y negocios familiares.',
-    href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20el%20plan%20ABIX%20Fiber%20Negocios%3A%20Mi%20equipo%20necesita%20comunicarse',
+    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20el%20plan%20ABIX%20Fiber%20Negocios%3A%20Mi%20equipo%20necesita%20comunicarse',
   },
 ]
 
@@ -68,7 +68,7 @@ const difs = [
 function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/16012587695?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20ABIX%20Negocios"
+      href="https://wa.me/14063441431?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20ABIX%20Negocios"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed z-50 flex items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110"
@@ -339,21 +339,21 @@ function MasVelocidad() {
       title: 'ABIX Fiber simétrico',
       desc: 'Misma velocidad para subir y para bajar. Ideal para videoconferencias, nube intensiva y operaciones que dependen de enviar tanta información como reciben.',
       cta: 'Cuéntanos qué necesitas',
-      href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20una%20soluci%C3%B3n%20ABIX%20Fiber%20sim%C3%A9trica%20para%20mi%20negocio',
+      href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20una%20soluci%C3%B3n%20ABIX%20Fiber%20sim%C3%A9trica%20para%20mi%20negocio',
     },
     {
       img: wifiNegocioImg,
       title: 'WiFi en todo tu negocio',
       desc: 'Cada negocio es diferente. Un restaurante con terraza no se resuelve igual que una oficina. Diseñamos la cobertura WiFi que tu espacio necesita.',
       cta: 'Platiquemos',
-      href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20mejorar%20el%20WiFi%20de%20todo%20mi%20negocio',
+      href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20mejorar%20el%20WiFi%20de%20todo%20mi%20negocio',
     },
     {
       img: lineasMovilesImg,
       title: 'Líneas móviles',
       desc: 'Si tu equipo necesita líneas adicionales, encontramos el plan que se ajuste a tu operación.',
       cta: 'Platiquemos',
-      href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesan%20l%C3%ADneas%20m%C3%B3viles%20ABIX%20para%20mi%20negocio',
+      href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesan%20l%C3%ADneas%20m%C3%B3viles%20ABIX%20para%20mi%20negocio',
     },
     {
       img: hotelesGrandesImg,
@@ -482,7 +482,7 @@ function FibraNoLlega() {
       price: '$119',
       desc: 'Para el negocio que opera en movimiento o necesita conectividad temporal: food trucks, tours, stands en eventos, operaciones de temporada.',
       equipo: 'Equipo MiFi: desde $999 con primer mes incluido.',
-      href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20To%20Go%20para%20mi%20negocio',
+      href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20To%20Go%20para%20mi%20negocio',
       bullets: ['Sin contratos', 'Plug & play', 'Portátil'],
     },
     {
@@ -493,7 +493,7 @@ function FibraNoLlega() {
       price: '$299',
       desc: 'Para el negocio que necesita internet fijo en una zona donde la fibra no ha llegado. Se instala un router, se conecta y funciona.',
       equipo: 'Equipo router: desde $1,499 con primer mes incluido.',
-      href: 'https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20LTE%20para%20mi%20negocio',
+      href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20ABIX%20LTE%20para%20mi%20negocio',
       bullets: ['Sin cableado', 'Activación rápida', 'Red 4.5G'],
     },
   ]
@@ -604,11 +604,11 @@ function ClosingNegocios() {
           Conecta tu negocio hoy. Fibra óptica con línea telefónica incluida en la Riviera Maya.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20ABIX%20para%20negocios%20desde%20%24599" target="_blank" rel="noopener noreferrer" className="font-bold text-white px-10 py-3.5 rounded-2xl transition-all hover:opacity-90 hover:scale-105 text-center"
+          <a href="https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20ABIX%20para%20negocios%20desde%20%24599" target="_blank" rel="noopener noreferrer" className="font-bold text-white px-10 py-3.5 rounded-2xl transition-all hover:opacity-90 hover:scale-105 text-center"
             style={{ backgroundColor: '#2bbdbd', fontSize: '1.05rem', boxShadow: '0 6px 24px rgba(43,189,189,0.4)' }}>
             Lo quiero
           </a>
-          <a href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20ABIX%20para%20negocios%20desde%20%24599" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20ABIX%20para%20negocios%20desde%20%24599" target="_blank" rel="noopener noreferrer"
             className="font-bold text-white px-10 py-3.5 rounded-2xl transition-all hover:opacity-90 hover:scale-105 flex items-center justify-center gap-2"
             style={{ backgroundColor: '#25D366', fontSize: '1.05rem', boxShadow: '0 6px 24px rgba(37,211,102,0.35)' }}>
             <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
@@ -648,7 +648,7 @@ function HeroNegocios() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20ABIX%20para%20negocios%20desde%20%24599" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20ABIX%20para%20negocios%20desde%20%24599" target="_blank" rel="noopener noreferrer"
               className="font-bold text-white inline-flex items-center justify-center gap-2 rounded-2xl transition-all hover:opacity-90"
               style={{ backgroundColor: '#25D366', fontSize: '1rem', padding: '0.9rem 2rem', boxShadow: '0 4px 16px rgba(37,211,102,0.35)' }}>
               <svg viewBox="0 0 24 24" fill="white" width="20" height="20" className="shrink-0">
@@ -701,7 +701,7 @@ export default function Negocios() {
         price={849}
         speed={300}
         savings="AHORRA $99 al mes"
-        href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20M%C3%A1s%20Negocio"
+        href="https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20M%C3%A1s%20Negocio"
       />
       <PlanBundle
         img={estrategicoImg}
@@ -718,7 +718,7 @@ export default function Negocios() {
         price={1048}
         speed={300}
         savings="AHORRA $99 al mes"
-        href="https://wa.me/16012587695?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Estrat%C3%A9gico"
+        href="https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20Estrat%C3%A9gico"
       />
       <MasVelocidad />
       <FibraNoLlega />
