@@ -102,18 +102,18 @@ export default function LteSection() {
   }
 
   return (
-    <section className="w-full py-20 px-6 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+    <section className="w-full py-20 px-6 overflow-hidden" style={{ backgroundColor: '#061a20' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
 
         {/* Header */}
         <div className="text-center mb-14">
           <h2
-            className="font-extrabold text-gray-900"
+            className="font-extrabold text-white"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
           >
             ¿Vives donde <span style={{ color: '#2bbdbd' }}>la fibra aún no llega</span>?
           </h2>
-          <p className="text-gray-500 mt-3" style={{ fontSize: '1.05rem' }}>
+          <p className="mt-3" style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.65)' }}>
             ABIX también llega ahí. Sin instalación, sin obra, sin esperas.
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function LteSection() {
           <div className="flex justify-center gap-2 mt-6">
             {products.map((_, i) => (
               <button key={i} onClick={() => setCurrent(i)} className="rounded-full transition-all"
-                style={{ width: i === current ? '20px' : '8px', height: '8px', backgroundColor: i === current ? '#2bbdbd' : '#cbd5e1' }} />
+                style={{ width: i === current ? '20px' : '8px', height: '8px', backgroundColor: i === current ? '#2bbdbd' : 'rgba(255,255,255,0.25)' }} />
             ))}
           </div>
         </div>

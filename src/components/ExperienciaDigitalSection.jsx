@@ -88,16 +88,16 @@ export default function ExperienciaDigitalSection() {
   }
 
   return (
-    <section className="w-full py-20 px-6 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+    <section className="w-full py-20 px-6 overflow-hidden" style={{ backgroundColor: '#061a20' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-gray-500 font-medium mb-2" style={{ fontSize: '1rem' }}>
+          <p className="font-medium mb-2" style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)' }}>
             ¿Ya tienes ABIX FIBER?
           </p>
           <h2
-            className="font-extrabold text-gray-900"
+            className="font-extrabold text-white"
             style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
           >
             Completa tu <span style={{ color: '#2bbdbd' }}>experiencia digital</span>
@@ -127,7 +127,7 @@ export default function ExperienciaDigitalSection() {
                 style={{
                   width: i === current ? '20px' : '8px',
                   height: '8px',
-                  backgroundColor: i === current ? '#2bbdbd' : '#cbd5e1',
+                  backgroundColor: i === current ? '#2bbdbd' : 'rgba(255,255,255,0.25)',
                 }}
               />
             ))}

@@ -25,12 +25,12 @@ export default function DiferenciadoresSection() {
   const [open, setOpen] = useState(0)
 
   return (
-    <section className="w-full py-20 px-6 bg-white">
+    <section className="w-full py-20 px-6" style={{ backgroundColor: '#061a20' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
 
         {/* Title */}
         <h2
-          className="font-extrabold text-gray-900 text-center mb-12"
+          className="font-extrabold text-white text-center mb-12"
           style={{ fontFamily: "'Montserrat Alternates', sans-serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
         >
           Lo que nos hace <span style={{ color: '#2bbdbd' }}>diferentes</span>
@@ -63,7 +63,7 @@ export default function DiferenciadoresSection() {
                       fontFamily: "'Montserrat Alternates', sans-serif",
                       fontSize: '0.95rem',
                       letterSpacing: '0.05em',
-                      backgroundColor: isOpen ? '#2bbdbd' : '#c8c8c8',
+                      backgroundColor: isOpen ? '#2bbdbd' : 'rgba(255,255,255,0.1)',
                       color: isOpen ? '#ffffff' : '#ffffff',
                       borderRadius: isOpen ? '0.75rem 0.75rem 0 0' : '0.75rem',
                     }}
@@ -77,13 +77,15 @@ export default function DiferenciadoresSection() {
 
                   {isOpen && (
                     <div
-                      className="px-5 py-4 text-gray-600"
                       style={{
                         fontSize: '0.95rem',
                         lineHeight: 1.7,
                         borderRadius: '0 0 0.75rem 0.75rem',
-                        border: '1px solid #e2e8f0',
+                        border: '1px solid rgba(255,255,255,0.1)',
                         borderTop: 'none',
+                        backgroundColor: 'rgba(255,255,255,0.05)',
+                        color: 'rgba(255,255,255,0.75)',
+                        padding: '1rem 1.25rem',
                       }}
                     >
                       {item.content}

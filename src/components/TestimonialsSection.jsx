@@ -87,13 +87,13 @@ export default function TestimonialsSection() {
   const t = testimonials[current]
 
   return (
-    <section ref={sectionRef} className="w-full py-20 px-6 bg-white">
+    <section ref={sectionRef} className="w-full py-20 px-6" style={{ backgroundColor: '#2bbdbd' }}>
       <div className="mx-auto" style={{ maxWidth: '860px' }}>
 
         {/* Stat counter */}
         <div className="text-center mb-12">
           <p
-            className="font-extrabold text-gray-900 leading-none"
+            className="font-extrabold text-white leading-none"
             style={{
               fontFamily: "'Montserrat Alternates', sans-serif",
               fontSize: 'clamp(3.5rem, 8vw, 6rem)',
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
           >
             +{count.toLocaleString('en-US')}
           </p>
-          <p className="font-bold text-gray-700 mt-1" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.3rem)' }}>
+          <p className="font-bold text-white mt-1" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.3rem)', opacity: 0.9 }}>
             familias ya tienen ABIX
           </p>
         </div>

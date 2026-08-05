@@ -41,7 +41,7 @@ export default function FiberSection() {
   }
 
   return (
-    <section className="w-full py-16 bg-white overflow-hidden">
+    <section className="w-full py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1340px' }}>
 
         {/* Header */}

@@ -5,7 +5,7 @@ import vasAAmarImg from '@/assets/img/vas-a-amar-tu-internet-02.png'
 
 export default function ClosingSection() {
   return (
-    <section className="w-full bg-white py-20 px-6">
+    <section className="w-full py-20 px-6" style={{ backgroundColor: '#061a20' }}>
       <div className="mx-auto" style={{ maxWidth: '1340px' }}>
 
         {/* ── MOBILE version ── */}
