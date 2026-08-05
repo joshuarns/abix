@@ -8,13 +8,23 @@ const items = [
     content: 'Más de 300 km de fibra óptica construida y operada por ABIX. De Cancún a Tulum, cada metro de fibra es nuestro, es para ti.',
   },
   {
-    title: 'CONEXIÓN DIRECTA',
-    content: 'Nos conectamos directamente con los principales centros de internet en EEUU. Eso significa una conexión más rápida, estable y confiable.',
+    title: 'SIN SATURACIÓN SOBRE VENTA',
+    content: 'No vendemos más capacidad de la que tenemos. Tu velocidad es real, todo el día, todos los días.',
   },
+  // Versión anterior — comentada
+  // {
+  //   title: 'CONEXIÓN DIRECTA',
+  //   content: 'Nos conectamos directamente con los principales centros de internet en EEUU. Eso significa una conexión más rápida, estable y confiable.',
+  // },
   {
-    title: 'SIEMPRE VIGILANTES',
-    content: 'Monitoreamos la red para detectar fallas, atenderlas rápido y mantener tu servicio funcionando.',
+    title: 'VIGILANCIA PROACTIVA 24/7',
+    content: 'Monitoreamos la red las 24 horas para detectar fallas antes de que las notes, atenderlas rápido y mantener tu servicio siempre funcionando.',
   },
+  // Versión anterior — comentada
+  // {
+  //   title: 'SIEMPRE VIGILANTES',
+  //   content: 'Monitoreamos la red para detectar fallas, atenderlas rápido y mantener tu servicio funcionando.',
+  // },
   {
     title: 'EXPERIENCIA PROBADA',
     content: 'Más de seis años construyendo la mejor red en Riviera Maya y más de 25 siendo pioneros del internet en México.',

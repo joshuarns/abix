@@ -7,7 +7,7 @@ const plans = [
     price: 499,
     speed: 60,
     featured: false,
-    ideal: 'Empieza a disfrutar la mejor conexión',
+    ideal: 'Ideal para 1 persona: navegación, clásica y streaming',
     href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%2060%2B%20Residencial',
   },
   {
@@ -15,23 +15,24 @@ const plans = [
     price: 549,
     speed: 100,
     featured: false,
-    ideal: 'Más espacio para todo lo que haces',
+    ideal: 'Ideal para 2 personas conectadas al mismo tiempo',
     href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20100%2B%20Residencial',
   },
-  {
-    name: 'FIBER 150+',
-    price: 599,
-    speed: 150,
-    featured: false,
-    ideal: 'Espacio de sobra para todo tu hogar',
-    href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20150%2B%20Residencial',
-  },
+  // FIBER 150+ — no aparece en el diseño 2026, comentado temporalmente
+  // {
+  //   name: 'FIBER 150+',
+  //   price: 599,
+  //   speed: 150,
+  //   featured: false,
+  //   ideal: 'Espacio de sobra para todo tu hogar',
+  //   href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20150%2B%20Residencial',
+  // },
   {
     name: 'FIBER 300+',
     price: 649,
     speed: 300,
     featured: true,
-    ideal: 'Vive y navega sin ningún límite',
+    ideal: 'La mejor opción, seleccionada para ti',
     href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20300%2B%20Residencial',
   },
   {
@@ -39,7 +40,7 @@ const plans = [
     price: 999,
     speed: 500,
     featured: false,
-    ideal: 'Rendimiento y confiabilidad total',
+    ideal: 'Para hogares con muchos dispositivos e intensivos',
     href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%20500%2B%20Residencial',
   },
   {
@@ -47,7 +48,7 @@ const plans = [
     price: 1499,
     speed: 1000,
     featured: false,
-    ideal: 'Lo mejor de la tecnología ABIX',
+    ideal: 'Para gamers y trabajo profesional',
     href: 'https://wa.me/14063441431?text=Hola%2C%20me%20interesa%20contratar%20el%20plan%20ABIX%20FIBER%201000%2B%20Residencial',
   },
 ]
@@ -149,7 +150,7 @@ export default function PlansSection() {
         </div>
 
         {/* Plans — Desktop grid */}
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch pt-6">
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-4 items-stretch pt-6">
           {plans.map((plan, i) => (
             <PlanCard key={plan.name} plan={plan} i={i} isHovered={hovered === i} setHovered={setHovered} />
           ))}

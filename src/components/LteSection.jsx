@@ -20,7 +20,7 @@ const products = [
     img: lteImg,
     tag: 'ABIX LTE',
     tagColor: '#146071',
-    title: 'Abix LTE',
+    title: 'Abix LTE Ilimitado',
     price: '$119',
     desc: 'Playa, cenote, carretera.',
     detail: 'Red 4.5G',

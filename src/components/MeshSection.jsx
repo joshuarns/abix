@@ -183,7 +183,7 @@ export default function MeshSection() {
               fontFamily: "'Montserrat Alternates', sans-serif",
             }}
           >
-            Desde $129
+            Desde $125
           </p>
           <p className="text-gray-500" style={{ fontSize: '0.95rem' }}>
             al mes por nodo adicional. Diagnóstico técnico gratuito para casas grandes.
